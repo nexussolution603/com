@@ -583,6 +583,21 @@
 
 
 
+
+
+
+
+ <script>
+  // Jab koi nav link pe click kare to menu band ho jaye
+  document.querySelectorAll('.navbar a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('toggler').checked = false;
+    });
+  });
+</script>
+
+
+
 </body>
 </html>
   
