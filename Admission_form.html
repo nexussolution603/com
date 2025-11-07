@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admission Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="page-container">
+    <!-- Text Section -->
+    <div class="text-section">
+      <h1>Welcome to the Admission Portal</h1>
+      <p class="subtitle">Please fill out the form carefully to apply for your desired course.</p>
+      <p class="instructions">This form requires your personal details and course selection. Ensure all fields are filled out correctly to avoid any delays in processing your application.</p>
+      <p class="more-info">Feel free to reach out to our support if you have any questions during the application process.</p>
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-container">
+      <h2>Admission Form</h2>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="43f959f6-b52d-4bbd-aa77-6821fbd6306f">
+
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="Full Name" placeholder="Enter your full name" required>
+
+        <label for="fatherName">Father's Name</label>
+        <input type="text" id="fatherName" name="Father's Name" placeholder="Enter father's name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="Email" placeholder="example@email.com" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="Phone Number" placeholder="Enter phone number" required>
+
+        <label for="course">Course Option</label>
+        <select id="course" name="Course Option" required>
+          <option value="Web development">Web development</option>
+          <option value="IT Certificate">IT Certificate</option>
+          <option value="Cyber Security">Cyber Security</option>
+          <option value="English Grammar">English Grammar</option>
+          <option value="Graphic Design">Graphic Design</option>
+        </select>
+
+        <label for="address">Current Address</label>
+        <textarea id="address" name="Current Address" placeholder="Enter your current address" required></textarea>
+
+        <label for="permanentAddress">Permanent Address</label>
+        <textarea id="permanentAddress" name="Permanent Address" placeholder="Enter your permanent address" required></textarea>
+
+        <label for="tehsil">Tehsil</label>
+        <input type="text" id="tehsil" name="Tehsil" placeholder="Enter tehsil name" required>
+
+        <label for="district">District</label>
+        <input type="text" id="district" name="District" placeholder="Enter district name" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="Message" placeholder="Tell us why you're applying for this course..." required></textarea>
+
+        <button type="submit">Submit Form</button>
+      </form>
+    </div>
+  </div>
+
+  <footer><button><a href="index.html">BACK</a></button> </footer>
+  
+
+
+
+<STYle>/* Global styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+    }
+    
+    /* Footer Styling */
+    footer {
+      text-align: center;
+      padding: 10px 0;
+      background-color: #333;
+      color: white;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    
+    
+    /* Main Page Container */
+    .page-container {
+      display: flex;
+      justify-content: space-between;
+      padding: 50px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    /* Text Section */
+    .text-section {
+      flex: 1;
+      margin-right: 30px;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    
+    h1, h2 {
+      color: #333;
+    }
+    
+    h1 {
+      font-size: 32px;
+    }
+    
+    h2 {
+      font-size: 28px;
+    }
+    
+    .subtitle {
+      font-size: 16px;
+      color: #666;
+    }
+    
+    .instructions {
+      font-size: 14px;
+      color: #777;
+      margin-top: 20px;
+    }
+    
+    .more-info {
+      font-size: 14px;
+      color: #444;
+      margin-top: 20px;
+    }
+    
+    /* Form Section */
+    .form-container {
+      flex: 1.5;
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    label {
+      margin: 10px 0 5px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    
+    input, select, textarea {
+      padding: 12px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+    
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    
+    button {
+      padding: 12px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background-color: #45a049;
+    }
+    
+    /* Focus effect for inputs */
+    input:focus, textarea:focus, select:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+    
+    /* Responsive Design: Stack on smaller screens */
+    @media (max-width: 768px) {
+      .page-container {
+        flex-direction: column;
+        padding: 20px;
+      }
+    
+      .text-section, .form-container {
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
+    
+      .text-section {
+        margin-bottom: 20px;
+      }
+    }
+    </STYle>
+
+
+
+
+</body>
+</html>
