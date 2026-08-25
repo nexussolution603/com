@@ -3,82 +3,178 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rana Solar Repairing Lab - Solar Inverter Repair Experts</title>
-    <!-- Font Awesome -->
+    <title>RANA SOLAR — 3D Portal System</title>
+    <meta name="description" content="RANA SOLAR TRADERS — Next‑gen solar service with 3D holographic experience. Inverter repair, NRE claims, solar products in Kasur." />
+    <meta name="keywords" content="solar inverter repair, 3D solar, NRE claim, Rana Solar, Kasur" />
+    <link rel="canonical" href="https://ranasolar.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="RANA SOLAR — 3D Holographic Portal" />
+    <meta property="og:description" content="Immersive 3D solar service experience. Inverter repair, NRE claims, products." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ranasolar.com/" />
+    <meta property="og:image" content="https://ranasolar.com/og-3d.jpg" />
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "RANA SOLAR TRADERS",
+            "telephone": "+923000041131",
+            "address": { "@type": "PostalAddress", "addressLocality": "Kasur", "addressCountry": "Pakistan" }
+        }
+    </script>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+
     <style>
-        /* ========== RESET & BASE ========== */
-        *,
-        *::before,
-        *::after {
+        /* ============================================================
+                   RESET & BASE — DARK HOLOGRAPHIC THEME
+                ============================================================ */
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
         :root {
-            --orange: #f59e0b;
-            --orange-light: #fbbf24;
-            --orange-dark: #d97706;
-            --orange-glow: rgba(245, 158, 11, 0.35);
-            --dark: #0b1120;
-            --dark-card: #111c2e;
-            --dark-surface: #162033;
-            --text-light: #f1f5f9;
+            --gold: #fbbf24;
+            --gold-glow: rgba(251, 191, 36, 0.4);
+            --purple: #7c3aed;
+            --cyan: #22d3ee;
+            --bg-deep: #05060a;
+            --glass: rgba(255, 255, 255, 0.04);
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --text-primary: #f1f5f9;
             --text-muted: #94a3b8;
-            --border-glow: rgba(245, 158, 11, 0.15);
-            --shadow-glow: 0 0 60px rgba(245, 158, 11, 0.08);
-            --radius: 18px;
-            --transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            --radius-xl: 28px;
+            --radius-lg: 18px;
         }
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 80px;
         }
 
         body {
-            font-family: "Inter", sans-serif;
-            background: var(--dark);
-            color: var(--text-light);
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-deep);
+            color: var(--text-primary);
             overflow-x: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+            cursor: default;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
+        /* ============================================================
+                   SECURITY OVERLAY (Premium)
+                ============================================================ */
+        #security-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(24px);
+            z-index: 99999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
         }
-        ul {
-            list-style: none;
+        #security-overlay.show {
+            display: flex;
         }
-        img {
-            max-width: 100%;
-            display: block;
+        #security-overlay i {
+            font-size: 5rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            animation: pulseIcon 1.5s ease-in-out infinite;
+        }
+        @keyframes pulseIcon {
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.6;
+            }
+        }
+        #security-overlay h3 {
+            font-size: 2.2rem;
+            font-family: 'Orbitron', monospace;
+            letter-spacing: 2px;
+        }
+        #security-overlay p {
+            color: var(--text-muted);
+            max-width: 480px;
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
+        /* ============================================================
+                   COOKIE BANNER — Glass
+                ============================================================ */
+        #cookie-banner {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 99998;
+            background: rgba(5, 6, 10, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-glass);
+            border-radius: 60px;
+            padding: 0.8rem 2rem 0.8rem 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+            max-width: 90%;
+        }
+        #cookie-banner p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        #cookie-banner a {
+            color: var(--gold);
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        #cookie-banner .btn-cookie {
+            background: var(--gold);
+            color: #05060a;
+            border: none;
+            padding: 0.5rem 2rem;
+            border-radius: 40px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            font-family: 'Inter', sans-serif;
+        }
+        #cookie-banner .btn-cookie:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(251, 191, 36, 0.3);
         }
 
-        /* ========== SCROLLBAR ========== */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--dark);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--orange);
-            border-radius: 10px;
-        }
-
-        /* ========== GLOW ORB BACKGROUND ========== */
-        #orb-canvas {
+        /* ============================================================
+                   THREE.JS CANVAS — Fullscreen 3D
+                ============================================================ */
+        #three-canvas {
             position: fixed;
             top: 0;
             left: 0;
@@ -86,1803 +182,1438 @@
             height: 100%;
             z-index: 0;
             pointer-events: none;
-            opacity: 0.35;
         }
 
-        /* ========== HEADER / NAV ========== */
-        header {
+        /* ============================================================
+                   PORTAL TRANSITION OVERLAY
+                ============================================================ */
+        #portal-transition {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 1000;
-            padding: 14px 0;
-            background: rgba(11, 17, 32, 0.78);
-            backdrop-filter: blur(18px);
-            border-bottom: 1px solid rgba(245, 158, 11, 0.08);
-            transition: var(--transition);
-        }
-
-        header.scrolled {
-            background: rgba(11, 17, 32, 0.94);
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        .nav-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-            font-size: 1.25rem;
-            letter-spacing: -0.5px;
-        }
-
-        .logo-icon {
-            width: 44px;
-            height: 44px;
-            background: linear-gradient(135deg, var(--orange), var(--orange-dark));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
+            height: 100%;
+            z-index: 9999;
+            pointer-events: none;
+            display: none;
             justify-content: center;
-            font-size: 1.3rem;
-            color: #fff;
-            box-shadow: 0 0 30px rgba(245, 158, 11, 0.25);
-            animation: pulse-glow 3s ease-in-out infinite;
+            align-items: center;
+            background: #05060a;
         }
-
-        @keyframes pulse-glow {
-            0%,
+        #portal-transition.active {
+            display: flex;
+            animation: portalFlash 0.9s ease-in-out;
+        }
+        @keyframes portalFlash {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+                border-radius: 50%;
+            }
+            40% {
+                opacity: 1;
+                transform: scale(1.3);
+                border-radius: 10%;
+                box-shadow: 0 0 200px rgba(251, 191, 36, 0.6);
+            }
             100% {
-                box-shadow: 0 0 30px rgba(245, 158, 11, 0.2);
+                opacity: 0;
+                transform: scale(2);
+                border-radius: 0%;
             }
-            50% {
-                box-shadow: 0 0 60px rgba(245, 158, 11, 0.5);
+        }
+        #portal-transition .ring {
+            width: 400px;
+            height: 400px;
+            border: 6px solid var(--gold);
+            border-radius: 50%;
+            box-shadow: 0 0 120px rgba(251, 191, 36, 0.5), inset 0 0 120px rgba(251, 191, 36, 0.1);
+            animation: spinRing 1s linear infinite;
+        }
+        @keyframes spinRing {
+            0% {
+                transform: rotate(0deg) scale(0.3);
+                opacity: 1;
+            }
+            100% {
+                transform: rotate(720deg) scale(2.5);
+                opacity: 0;
             }
         }
 
-        .logo span {
-            color: var(--orange);
+        /* ============================================================
+                   GLASS NAVBAR — Holographic
+                ============================================================ */
+        .navbar {
+            position: fixed;
+            top: 1.2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background: rgba(5, 6, 10, 0.6);
+            backdrop-filter: blur(24px);
+            border: 1px solid var(--border-glass);
+            border-radius: 80px;
+            padding: 0.5rem 1.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 92%;
+            max-width: 1200px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            transition: 0.3s;
         }
-        .logo small {
+
+        .logo-3d {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+        .logo-3d .icon-3d {
+            font-size: 1.8rem;
+            color: var(--gold);
+            filter: drop-shadow(0 0 20px var(--gold-glow));
+        }
+        .logo-3d .brand-text {
+            font-family: 'Orbitron', monospace;
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+        .logo-3d .brand-text span {
+            color: var(--gold);
+        }
+        .logo-3d .sub-tag {
+            font-size: 0.55rem;
             font-weight: 400;
-            font-size: 0.7rem;
             color: var(--text-muted);
+            letter-spacing: 2px;
             display: block;
-            letter-spacing: 0.3px;
+            margin-top: -2px;
+            text-transform: uppercase;
         }
 
         .nav-links {
             display: flex;
+            gap: 0.5rem;
+            list-style: none;
             align-items: center;
-            gap: 6px;
         }
-
         .nav-links a {
-            padding: 8px 14px;
-            border-radius: 10px;
+            color: var(--text-muted);
+            text-decoration: none;
             font-size: 0.85rem;
             font-weight: 500;
-            color: var(--text-muted);
-            transition: var(--transition);
-            position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            transition: 0.3s;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.3px;
         }
-
         .nav-links a:hover,
         .nav-links a.active {
             color: #fff;
-            background: rgba(245, 158, 11, 0.12);
+            background: rgba(251, 191, 36, 0.12);
+            box-shadow: 0 0 30px rgba(251, 191, 36, 0.05);
         }
-
-        .nav-links a.active::after {
-            content: '';
-            position: absolute;
-            bottom: 4px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 2px;
-            background: var(--orange);
-            border-radius: 10px;
+        .nav-links .btn-cta {
+            background: var(--gold);
+            color: #05060a;
+            font-weight: 700;
+            padding: 0.5rem 1.6rem;
+            box-shadow: 0 0 40px rgba(251, 191, 36, 0.2);
         }
-
-        .nav-cta {
-            background: linear-gradient(135deg, var(--orange), var(--orange-dark)) !important;
-            color: #fff !important;
-            padding: 8px 20px !important;
-            border-radius: 30px !important;
-            font-weight: 600 !important;
-            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3);
-            transition: var(--transition);
-        }
-
-        .nav-cta:hover {
-            transform: scale(1.04);
-            box-shadow: 0 6px 30px rgba(245, 158, 11, 0.5);
-            background: linear-gradient(135deg, var(--orange-light), var(--orange)) !important;
+        .nav-links .btn-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 60px rgba(251, 191, 36, 0.4);
+            background: #fcd34d;
         }
 
         .hamburger {
             display: none;
             flex-direction: column;
             gap: 5px;
-            cursor: pointer;
-            padding: 4px;
             background: none;
             border: none;
+            cursor: pointer;
         }
-
         .hamburger span {
             width: 26px;
-            height: 2.5px;
-            background: var(--text-light);
-            border-radius: 10px;
-            transition: var(--transition);
+            height: 2px;
+            background: #fff;
+            border-radius: 4px;
+            transition: 0.3s;
         }
 
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
-
-        /* ========== HERO ========== */
+        /* ============================================================
+                   HERO — 3D Immersive
+                ============================================================ */
         .hero {
             position: relative;
             z-index: 1;
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 120px 0 80px;
-            overflow: hidden;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            pointer-events: none;
         }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+        .hero-content {
+            pointer-events: auto;
+            max-width: 900px;
         }
-
+        .hero-content .glow-badge {
+            display: inline-block;
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid rgba(251, 191, 36, 0.2);
+            padding: 0.3rem 1.8rem;
+            border-radius: 60px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            backdrop-filter: blur(8px);
+            margin-bottom: 2rem;
+            font-family: 'Orbitron', monospace;
+        }
         .hero-content h1 {
-            font-size: clamp(2.6rem, 6vw, 4.2rem);
-            font-weight: 800;
-            line-height: 1.1;
-            letter-spacing: -1.5px;
-            margin-bottom: 20px;
-        }
-
-        .hero-content h1 .highlight {
-            background: linear-gradient(135deg, var(--orange), var(--orange-light));
+            font-family: 'Orbitron', monospace;
+            font-size: 5.5rem;
+            font-weight: 900;
+            line-height: 1.05;
+            background: linear-gradient(135deg, #fff 30%, var(--gold) 60%, var(--purple) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
+            filter: drop-shadow(0 0 80px rgba(251, 191, 36, 0.15));
+            letter-spacing: -1px;
         }
-
-        .hero-content p {
-            font-size: 1.15rem;
+        .hero-content .sub-title {
+            font-size: 1.3rem;
             color: var(--text-muted);
-            max-width: 520px;
-            margin-bottom: 32px;
+            max-width: 600px;
+            margin: 1.5rem auto 2.5rem;
+            line-height: 1.8;
+            font-weight: 300;
+            letter-spacing: 0.5px;
         }
-
-        .hero-badges {
+        .hero-buttons {
             display: flex;
+            gap: 1.2rem;
+            justify-content: center;
             flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 36px;
         }
-
-        .hero-badges span {
-            background: rgba(245, 158, 11, 0.08);
-            border: 1px solid rgba(245, 158, 11, 0.12);
-            padding: 6px 18px;
-            border-radius: 40px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: var(--orange-light);
-        }
-
-        .hero-btns {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--orange), var(--orange-dark));
-            color: #fff;
-            padding: 14px 34px;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 0.95rem;
+        .btn-primary-3d {
+            background: linear-gradient(135deg, var(--gold), #f59e0b);
+            color: #05060a;
+            padding: 0.9rem 2.8rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: 0.4s;
+            box-shadow: 0 0 60px rgba(251, 191, 36, 0.2);
+            font-family: 'Inter', sans-serif;
             border: none;
             cursor: pointer;
-            transition: var(--transition);
-            box-shadow: 0 4px 30px rgba(245, 158, 11, 0.3);
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
         }
-
-        .btn-primary:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 8px 50px rgba(245, 158, 11, 0.5);
+        .btn-primary-3d:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 20px 80px rgba(251, 191, 36, 0.4);
         }
-
-        .btn-secondary {
-            background: transparent;
+        .btn-outline-3d {
+            background: rgba(255, 255, 255, 0.04);
             color: #fff;
-            padding: 14px 34px;
-            border-radius: 40px;
+            padding: 0.9rem 2.8rem;
+            border-radius: 60px;
             font-weight: 600;
-            font-size: 0.95rem;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            cursor: pointer;
-            transition: var(--transition);
+            font-size: 1.05rem;
+            text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 0.8rem;
+            border: 1px solid var(--border-glass);
+            transition: 0.4s;
+            backdrop-filter: blur(8px);
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+        }
+        .btn-outline-3d:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-4px);
+            box-shadow: 0 0 60px rgba(251, 191, 36, 0.05);
         }
 
-        .btn-secondary:hover {
-            border-color: var(--orange);
-            background: rgba(245, 158, 11, 0.06);
-            transform: translateY(-3px);
-        }
-
-        /* Hero 3D Visual */
-        .hero-visual {
-            position: relative;
+        .hero-stats-3d {
             display: flex;
+            gap: 4rem;
             justify-content: center;
-            align-items: center;
-            perspective: 1200px;
+            margin-top: 4rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid var(--border-glass);
         }
-
-        .hero-3d-box {
-            width: 100%;
-            max-width: 480px;
-            aspect-ratio: 1/1;
-            position: relative;
-            transform-style: preserve-3d;
-            animation: float-3d 6s ease-in-out infinite;
+        .hero-stats-3d .stat h3 {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gold);
+            text-shadow: 0 0 40px rgba(251, 191, 36, 0.2);
         }
-
-        @keyframes float-3d {
-            0%,
-            100% {
-                transform: rotateY(-8deg) rotateX(4deg) translateY(0);
-            }
-            50% {
-                transform: rotateY(8deg) rotateX(-4deg) translateY(-18px);
-            }
-        }
-
-        .hero-3d-box .orb-ring {
-            position: absolute;
-            inset: 0;
-            border-radius: 50%;
-            border: 2px solid rgba(245, 158, 11, 0.12);
-            animation: spin-ring 20s linear infinite;
-        }
-
-        .hero-3d-box .orb-ring:nth-child(2) {
-            width: 82%;
-            height: 82%;
-            top: 9%;
-            left: 9%;
-            border-color: rgba(245, 158, 11, 0.08);
-            animation-duration: 15s;
-            animation-direction: reverse;
-        }
-
-        .hero-3d-box .orb-ring:nth-child(3) {
-            width: 64%;
-            height: 64%;
-            top: 18%;
-            left: 18%;
-            border-color: rgba(245, 158, 11, 0.05);
-            animation-duration: 12s;
-        }
-
-        @keyframes spin-ring {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        .hero-3d-box .center-icon {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 6rem;
-            color: var(--orange);
-            filter: drop-shadow(0 0 60px rgba(245, 158, 11, 0.3));
-            animation: pulse-icon 3s ease-in-out infinite;
-        }
-
-        @keyframes pulse-icon {
-            0%,
-            100% {
-                transform: scale(1);
-                filter: drop-shadow(0 0 40px rgba(245, 158, 11, 0.25));
-            }
-            50% {
-                transform: scale(1.06);
-                filter: drop-shadow(0 0 80px rgba(245, 158, 11, 0.5));
-            }
-        }
-
-        .hero-3d-box .floating-badge {
-            position: absolute;
-            background: rgba(17, 30, 51, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(245, 158, 11, 0.12);
-            padding: 10px 18px;
-            border-radius: 14px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: var(--text-light);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-            animation: float-badge 4s ease-in-out infinite;
-            white-space: nowrap;
-        }
-
-        .floating-badge i {
-            color: var(--orange);
-        }
-
-        .floating-badge:nth-child(4) {
-            top: 6%;
-            right: 4%;
-            animation-delay: 0.2s;
-        }
-        .floating-badge:nth-child(5) {
-            bottom: 10%;
-            left: 2%;
-            animation-delay: 0.8s;
-        }
-        .floating-badge:nth-child(6) {
-            bottom: 30%;
-            right: 0%;
-            animation-delay: 1.4s;
-        }
-
-        @keyframes float-badge {
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 40px;
-            margin-top: 40px;
-            padding-top: 32px;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-        }
-
-        .hero-stats .stat h3 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--orange);
-        }
-
-        .hero-stats .stat p {
-            font-size: 0.8rem;
+        .hero-stats-3d .stat p {
             color: var(--text-muted);
-            margin: 0;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 400;
         }
 
-        /* ========== SECTION COMMON ========== */
-        section {
+        /* ============================================================
+                   SECTIONS — Glass Holographic
+                ============================================================ */
+        .section {
             position: relative;
             z-index: 1;
-            padding: 90px 0;
-        }
-
-        .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(245, 158, 11, 0.08);
-            border: 1px solid rgba(245, 158, 11, 0.1);
-            padding: 4px 16px 4px 12px;
-            border-radius: 40px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--orange-light);
-            margin-bottom: 14px;
-        }
-
-        .section-label i {
-            font-size: 0.6rem;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 4vw, 2.8rem);
-            font-weight: 700;
-            letter-spacing: -1px;
-            margin-bottom: 14px;
-        }
-
-        .section-title .highlight {
-            color: var(--orange);
-        }
-
-        .section-sub {
-            color: var(--text-muted);
-            max-width: 560px;
-            font-size: 1.05rem;
+            padding: 5rem 2rem;
+            max-width: 1300px;
+            margin: 0 auto;
         }
 
         .section-header {
-            margin-bottom: 50px;
-        }
-
-        .section-header.center {
             text-align: center;
+            margin-bottom: 4rem;
+        }
+        .section-header .tag {
+            display: inline-block;
+            font-family: 'Orbitron', monospace;
+            font-size: 0.7rem;
+            color: var(--gold);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            background: rgba(251, 191, 36, 0.08);
+            padding: 0.2rem 1.2rem;
+            border-radius: 40px;
+            border: 1px solid rgba(251, 191, 36, 0.1);
+            margin-bottom: 0.8rem;
+        }
+        .section-header h2 {
+            font-family: 'Orbitron', monospace;
+            font-size: 3.2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .section-header h2 span {
+            color: var(--gold);
+            text-shadow: 0 0 40px rgba(251, 191, 36, 0.1);
+        }
+        .section-header p {
+            color: var(--text-muted);
+            max-width: 550px;
+            margin: 0.8rem auto 0;
+            font-size: 1.05rem;
+            font-weight: 300;
         }
 
-        .section-header.center .section-sub {
-            margin: 0 auto;
+        /* ---- Glass Cards ---- */
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-lg);
+            padding: 2rem 1.8rem;
+            transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .glass-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(251, 191, 36, 0.2);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
         }
 
-        /* ========== SERVICES / PRODUCTS ========== */
-        .services-grid {
+        .category-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
         }
-
-        .service-card {
-            background: var(--dark-card);
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            border-radius: var(--radius);
-            padding: 28px 22px;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            transform-style: preserve-3d;
+        .category-grid .glass-card {
+            text-align: center;
             cursor: default;
         }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.04), transparent);
-            opacity: 0;
-            transition: var(--transition);
+        .category-grid .glass-card .icon {
+            font-size: 2.8rem;
+            color: var(--gold);
+            margin-bottom: 0.8rem;
+            filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.15));
         }
-
-        .service-card:hover {
-            transform: translateY(-6px) scale(1.01);
-            border-color: rgba(245, 158, 11, 0.15);
-            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4), var(--shadow-glow);
-        }
-
-        .service-card:hover::before {
-            opacity: 1;
-        }
-
-        .service-card .icon {
-            font-size: 2rem;
-            color: var(--orange);
-            margin-bottom: 14px;
-            display: inline-block;
-            transition: var(--transition);
-        }
-
-        .service-card:hover .icon {
-            transform: scale(1.1) rotate(-4deg);
-        }
-
-        .service-card h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .service-card p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin: 0;
-        }
-
-        .service-card .badge {
-            display: inline-block;
-            margin-top: 12px;
-            font-size: 0.65rem;
-            font-weight: 600;
-            color: var(--orange);
-            background: rgba(245, 158, 11, 0.08);
-            padding: 2px 12px;
-            border-radius: 30px;
-            border: 1px solid rgba(245, 158, 11, 0.06);
-        }
-
-        /* ========== ABOUT ========== */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .about-image {
-            position: relative;
-            border-radius: var(--radius);
-            overflow: hidden;
-            background: var(--dark-card);
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            aspect-ratio: 4/3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            perspective: 800px;
-        }
-
-        .about-image .placeholder-3d {
-            font-size: 5rem;
-            color: var(--orange);
-            opacity: 0.4;
-            animation: float-3d 8s ease-in-out infinite;
-        }
-
-        .about-image .floating-tag {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(17, 30, 51, 0.9);
-            backdrop-filter: blur(12px);
-            padding: 12px 20px;
-            border-radius: 12px;
-            border: 1px solid rgba(245, 158, 11, 0.1);
-            font-size: 0.8rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .about-text h3 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-
-        .about-text p {
-            color: var(--text-muted);
-            margin-bottom: 16px;
-        }
-
-        .about-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-top: 20px;
-        }
-
-        .about-features li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-
-        .about-features li i {
-            color: var(--orange);
-            font-size: 0.8rem;
-        }
-
-        /* ========== TESTIMONIALS ========== */
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 24px;
-        }
-
-        .testimonial-card {
-            background: var(--dark-card);
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            border-radius: var(--radius);
-            padding: 30px;
-            transition: var(--transition);
-        }
-
-        .testimonial-card:hover {
-            border-color: rgba(245, 158, 11, 0.08);
-            transform: translateY(-4px);
-        }
-
-        .testimonial-card .stars {
-            color: var(--orange);
-            font-size: 0.85rem;
-            margin-bottom: 12px;
-            letter-spacing: 2px;
-        }
-
-        .testimonial-card blockquote {
-            font-size: 0.95rem;
-            line-height: 1.7;
-            color: var(--text-light);
-            font-style: italic;
-            margin-bottom: 16px;
-        }
-
-        .testimonial-card .author {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .testimonial-card .author .avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--orange), var(--orange-dark));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            font-size: 0.8rem;
-            color: #fff;
-        }
-
-        .testimonial-card .author .name {
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .testimonial-card .author .role {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        /* ========== FAQ ========== */
-        .faq-list {
-            max-width: 800px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .faq-item {
-            background: var(--dark-card);
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            border-radius: 14px;
-            overflow: hidden;
-            transition: var(--transition);
-        }
-
-        .faq-item:hover {
-            border-color: rgba(245, 158, 11, 0.06);
-        }
-
-        .faq-question {
-            width: 100%;
-            padding: 18px 24px;
-            background: none;
-            border: none;
-            color: var(--text-light);
-            font-size: 1rem;
-            font-weight: 600;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            text-align: left;
-            font-family: inherit;
-            transition: var(--transition);
-        }
-
-        .faq-question:hover {
-            color: var(--orange-light);
-        }
-
-        .faq-question i {
-            transition: var(--transition);
-            color: var(--orange);
-            font-size: 0.9rem;
-        }
-
-        .faq-item.active .faq-question i {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.3s ease;
-            padding: 0 24px;
-            color: var(--text-muted);
-            font-size: 0.92rem;
-            line-height: 1.7;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-            padding: 0 24px 24px;
-        }
-
-        /* ========== CONTACT ========== */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-        }
-
-        .contact-info h3 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .contact-info p {
-            color: var(--text-muted);
-            margin-bottom: 28px;
-        }
-
-        .contact-details {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-        }
-
-        .contact-details li {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            padding: 14px 20px;
-            background: var(--dark-card);
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            transition: var(--transition);
-        }
-
-        .contact-details li:hover {
-            border-color: rgba(245, 158, 11, 0.08);
-        }
-
-        .contact-details li i {
-            width: 40px;
-            height: 40px;
-            background: rgba(245, 158, 11, 0.08);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--orange);
+        .category-grid .glass-card h3 {
             font-size: 1.1rem;
-        }
-
-        .contact-details li .info {
-            font-weight: 500;
-        }
-        .contact-details li .info small {
-            display: block;
-            font-weight: 400;
-            color: var(--text-muted);
-            font-size: 0.8rem;
-        }
-
-        .contact-form {
-            background: var(--dark-card);
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            border-radius: var(--radius);
-            padding: 36px;
-        }
-
-        .contact-form h4 {
-            font-size: 1.2rem;
             font-weight: 600;
-            margin-bottom: 8px;
         }
-
-        .contact-form .sub {
+        .category-grid .glass-card p {
             color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 24px;
+            font-size: 0.85rem;
+            margin: 0.3rem 0 0.8rem;
+        }
+        .category-grid .glass-card .badge {
+            display: inline-block;
+            background: var(--gold);
+            color: #05060a;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            letter-spacing: 0.5px;
         }
 
-        .form-group {
-            margin-bottom: 18px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 4px;
-            color: var(--text-muted);
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 12px 16px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 10px;
-            color: var(--text-light);
-            font-family: inherit;
-            font-size: 0.95rem;
-            transition: var(--transition);
-            outline: none;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: var(--orange);
-            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.08);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 110px;
-        }
-
-        /* ========== BLOG ========== */
-        .blog-grid {
+        /* ---- Product 3D Flip Cards ---- */
+        .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 28px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+        .flip-card {
+            perspective: 1200px;
+            height: 100%;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            transform-style: preserve-3d;
+        }
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: var(--radius-lg);
+            padding: 1.8rem 1.5rem;
+            background: var(--glass);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border-glass);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .flip-card-front {
+            align-items: center;
+            text-align: center;
+        }
+        .flip-card-front .p-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+            filter: drop-shadow(0 0 30px rgba(251, 191, 36, 0.1));
+        }
+        .flip-card-front h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .flip-card-front .p-desc {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            flex: 1;
+        }
+        .flip-card-front .p-rating {
+            color: var(--gold);
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+        }
+        .flip-card-back {
+            transform: rotateY(180deg);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 1rem;
+        }
+        .flip-card-back .share-btns {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .flip-card-back .share-btns a {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text-muted);
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .flip-card-back .share-btns a:hover {
+            background: var(--gold);
+            color: #05060a;
+        }
+        .flip-card-back .btn-wa {
+            background: #25D366;
+            color: #fff !important;
+        }
+        .flip-card-back .btn-wa:hover {
+            background: #1ebe5c !important;
         }
 
-        .blog-card {
-            background: var(--dark-card);
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            border-radius: var(--radius);
-            overflow: hidden;
-            transition: var(--transition);
+        /* ---- Team ---- */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2.5rem;
         }
-
-        .blog-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(245, 158, 11, 0.06);
-            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
+        .team-grid .glass-card {
+            text-align: center;
         }
-
-        .blog-card .thumb {
-            height: 180px;
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.06), rgba(245, 158, 11, 0.01));
+        .team-grid .glass-card .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), var(--purple));
+            margin: 0 auto 1.2rem;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2.8rem;
-            color: var(--orange);
-            opacity: 0.5;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+            color: #05060a;
+            font-weight: 700;
+            box-shadow: 0 0 60px rgba(251, 191, 36, 0.1);
         }
-
-        .blog-card .body {
-            padding: 22px 24px 24px;
+        .team-grid .glass-card h4 {
+            font-size: 1.1rem;
         }
-
-        .blog-card .body .tag {
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-            color: var(--orange);
-            background: rgba(245, 158, 11, 0.06);
-            padding: 2px 12px;
-            border-radius: 30px;
-            display: inline-block;
-            margin-bottom: 8px;
-        }
-
-        .blog-card .body h4 {
-            font-size: 1.05rem;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .blog-card .body p {
+        .team-grid .glass-card .role {
+            color: var(--gold);
             font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 14px;
+            font-weight: 600;
+            margin: 0.2rem 0 0.5rem;
         }
-
-        .blog-card .body .meta {
-            font-size: 0.7rem;
+        .team-grid .glass-card .desc {
             color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        .team-socials {
             display: flex;
-            gap: 16px;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        .team-socials a {
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.04);
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .team-socials a:hover {
+            color: #fff;
+            background: var(--gold);
+            transform: scale(1.15);
         }
 
-        .blog-card .body .meta i {
-            color: var(--orange);
+        /* ---- Contact ---- */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            background: var(--glass);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-lg);
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            transition: 0.3s;
+            font-family: 'Inter', sans-serif;
+            backdrop-filter: blur(8px);
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            border-color: var(--gold);
+            outline: none;
+            box-shadow: 0 0 40px rgba(251, 191, 36, 0.05);
+        }
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .contact-form button {
+            background: var(--gold);
+            color: #05060a;
+            border: none;
+            padding: 0.9rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+            font-family: 'Inter', sans-serif;
+        }
+        .contact-form button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 50px rgba(251, 191, 36, 0.3);
         }
 
-        /* ========== FOOTER ========== */
-        footer {
+        .contact-info .item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 1.2rem;
+        }
+        .contact-info .item i {
+            font-size: 1.4rem;
+            color: var(--gold);
+            width: 32px;
+            text-align: center;
+        }
+        .contact-info .item a {
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .contact-info .item a:hover {
+            color: var(--gold);
+        }
+        .newsletter-box {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+        .newsletter-box input {
+            flex: 1;
+            padding: 0.8rem 1.2rem;
+            background: var(--glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 60px;
+            color: #fff;
+            min-width: 160px;
+            font-family: 'Inter', sans-serif;
+        }
+        .newsletter-box button {
+            background: var(--gold);
+            color: #05060a;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 60px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: 'Inter', sans-serif;
+        }
+        .newsletter-box button:hover {
+            transform: scale(1.05);
+        }
+
+        /* ============================================================
+                   FOOTER — Holographic
+                ============================================================ */
+        .footer {
             position: relative;
             z-index: 1;
-            background: var(--dark-card);
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
-            padding: 60px 0 30px;
+            padding: 3rem 2rem 1.5rem;
+            border-top: 1px solid var(--border-glass);
+            background: rgba(5, 6, 10, 0.6);
+            backdrop-filter: blur(16px);
         }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-brand .logo {
-            margin-bottom: 12px;
-        }
-
-        .footer-brand p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            max-width: 300px;
-        }
-
-        .footer-col h5 {
-            font-weight: 600;
-            margin-bottom: 16px;
-            font-size: 0.95rem;
-        }
-
-        .footer-col a {
-            display: block;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            padding: 4px 0;
-            transition: var(--transition);
-        }
-
-        .footer-col a:hover {
-            color: var(--orange-light);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
-            padding-top: 24px;
+        .footer-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .footer-socials {
+            display: flex;
+            gap: 1.2rem;
+        }
+        .footer-socials a {
+            color: var(--text-muted);
+            font-size: 1.4rem;
+            transition: 0.3s;
+        }
+        .footer-socials a:hover {
+            color: var(--gold);
+            transform: scale(1.15);
+        }
+        .footer-links {
+            display: flex;
+            gap: 1.8rem;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        .footer-bottom {
+            border-top: 1px solid var(--border-glass);
+            padding-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
             font-size: 0.8rem;
             color: var(--text-muted);
         }
-
-        .footer-social {
-            display: flex;
-            gap: 12px;
+        .footer-bottom a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .footer-bottom .protected {
+            color: #4b5563;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
         }
 
-        .footer-social a {
-            width: 38px;
-            height: 38px;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.04);
+        /* ============================================================
+                   MODALS — Glass
+                ============================================================ */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            z-index: 99997;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        .modal-overlay.open {
+            display: flex;
+        }
+        .modal-box {
+            background: #0d111a;
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-xl);
+            max-width: 700px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 2.5rem;
+            color: var(--text-muted);
+            position: relative;
+            animation: modalFade 0.5s ease;
+        }
+        @keyframes modalFade {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        .modal-box h2 {
+            font-family: 'Orbitron', monospace;
+            color: #fff;
+            margin-bottom: 1.2rem;
+            font-size: 1.8rem;
+        }
+        .modal-box p,
+        .modal-box li {
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
+        }
+        .modal-box ul {
+            padding-left: 1.5rem;
+        }
+        .modal-close {
+            position: sticky;
+            top: 0;
+            float: right;
+            background: none;
+            border: none;
+            color: var(--gold);
+            font-size: 2.2rem;
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: 1;
+        }
+        .modal-close:hover {
+            transform: rotate(90deg);
+        }
+
+        /* ============================================================
+                   WHATSAPP FLOAT — 3D Glow
+                ============================================================ */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+            background: #25D366;
+            color: #fff;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--text-muted);
-            transition: var(--transition);
+            font-size: 2.6rem;
+            text-decoration: none;
+            box-shadow: 0 8px 40px rgba(37, 211, 102, 0.4);
+            transition: 0.4s;
+            animation: floatPulse 3s ease-in-out infinite;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.12);
+            box-shadow: 0 8px 60px rgba(37, 211, 102, 0.6);
+        }
+        @keyframes floatPulse {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.06);
+            }
         }
 
-        .footer-social a:hover {
-            background: rgba(245, 158, 11, 0.08);
-            color: var(--orange);
-            border-color: rgba(245, 158, 11, 0.1);
-        }
-
-        /* ========== BACK TO TOP ========== */
-        .back-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 999;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--orange), var(--orange-dark));
-            border: none;
-            color: #fff;
-            font-size: 1.2rem;
-            cursor: pointer;
-            box-shadow: 0 4px 30px rgba(245, 158, 11, 0.3);
-            transition: var(--transition);
+        /* ============================================================
+                   SCROLL REVEAL
+                ============================================================ */
+        .reveal {
             opacity: 0;
-            pointer-events: none;
-            transform: translateY(20px);
+            transform: translateY(50px) scale(0.96);
+            transition: opacity 1s ease, transform 1s ease;
         }
-
-        .back-top.visible {
+        .reveal.visible {
             opacity: 1;
-            pointer-events: auto;
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
         }
 
-        .back-top:hover {
-            transform: scale(1.08);
-            box-shadow: 0 6px 40px rgba(245, 158, 11, 0.5);
+        /* ============================================================
+                   RESPONSIVE
+                ============================================================ */
+        @media (max-width: 1024px) {
+            .hero-content h1 {
+                font-size: 4rem;
+            }
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .hero-stats-3d {
+                gap: 2rem;
+            }
         }
 
-        /* ========== RESPONSIVE ========== */
-        @media (max-width: 992px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .hero-content p {
-                margin: 0 auto 28px;
-            }
-            .hero-btns {
-                justify-content: center;
-            }
-            .hero-badges {
-                justify-content: center;
-            }
-            .hero-stats {
-                justify-content: center;
-            }
-            .hero-visual {
-                order: -1;
-            }
-            .hero-3d-box {
-                max-width: 320px;
-            }
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0.5rem 1.2rem;
+                width: 96%;
+                top: 0.8rem;
+                border-radius: 40px;
             }
             .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 280px;
-                height: 100vh;
-                background: rgba(11, 17, 32, 0.97);
-                backdrop-filter: blur(20px);
+                display: none;
                 flex-direction: column;
-                padding: 80px 30px 30px;
-                gap: 4px;
-                transition: var(--transition);
-                border-left: 1px solid rgba(255, 255, 255, 0.04);
+                background: rgba(5, 6, 10, 0.98);
+                padding: 1.5rem;
+                border-radius: var(--radius-lg);
+                position: absolute;
+                top: 100%;
+                left: 0.5rem;
+                right: 0.5rem;
+                gap: 0.6rem;
+                border: 1px solid var(--border-glass);
+                backdrop-filter: blur(20px);
             }
             .nav-links.open {
-                right: 0;
-            }
-            .nav-links a {
-                width: 100%;
-                padding: 12px 16px;
+                display: flex;
             }
             .hamburger {
                 display: flex;
             }
-            .hero-stats {
-                flex-wrap: wrap;
-                gap: 20px;
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            .hero-content .sub-title {
+                font-size: 1rem;
+            }
+            .hero-stats-3d .stat h3 {
+                font-size: 1.8rem;
+            }
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+            .category-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            .product-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            }
+            .footer-top {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .modal-box {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+            #cookie-banner {
+                padding: 0.8rem 1.5rem;
+                border-radius: 30px;
+                bottom: 1rem;
+                gap: 0.8rem;
             }
         }
 
-        @media (max-width: 600px) {
-            .services-grid {
-                grid-template-columns: 1fr 1fr;
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
             }
-            .about-features {
-                grid-template-columns: 1fr;
+            .hero-stats-3d {
+                flex-wrap: wrap;
+                gap: 1.2rem;
             }
-            .footer-grid {
-                grid-template-columns: 1fr;
+            .hero-stats-3d .stat h3 {
+                font-size: 1.5rem;
             }
-            .testimonial-grid {
-                grid-template-columns: 1fr;
+            .btn-primary-3d,
+            .btn-outline-3d {
+                padding: 0.7rem 1.8rem;
+                font-size: 0.9rem;
             }
-            .blog-grid {
-                grid-template-columns: 1fr;
-            }
-            .contact-form {
-                padding: 24px;
-            }
-            .hero-3d-box {
-                max-width: 240px;
-            }
-            .floating-badge {
-                font-size: 0.6rem;
-                padding: 6px 12px;
-            }
-            .hero-3d-box .center-icon {
-                font-size: 4rem;
-            }
-            section {
-                padding: 60px 0;
-            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-deep);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
         }
     </style>
 </head>
 <body>
 
-    <!-- ====== 3D ORB BACKGROUND ====== -->
-    <canvas id="orb-canvas"></canvas>
+    <!-- ===== SECURITY OVERLAY ===== -->
+    <div id="security-overlay">
+        <i class="fas fa-shield-halved"></i>
+        <h3>⚡ SECURE PORTAL</h3>
+        <p>This 3D experience is protected against copying and unauthorized access.</p>
+    </div>
 
-    <!-- ====== HEADER ====== -->
-    <header id="header">
-        <div class="container nav-inner">
-            <a href="#" class="logo">
-                <div class="logo-icon"><i class="fas fa-sun"></i></div>
-                <div>
-                    Rana Solar <span>Repair</span>
-                    <small>Lab · Kasur</small>
-                </div>
-            </a>
+    <!-- ===== PORTAL TRANSITION ===== -->
+    <div id="portal-transition"><div class="ring"></div></div>
 
-            <nav class="nav-links" id="navLinks">
-                <a href="#home" class="active">Home</a>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#products">Products</a>
-                <a href="#testimonials">Reviews</a>
-                <a href="#faq">FAQ</a>
-                <a href="#blog">Blog</a>
-                <a href="#contact" class="nav-cta"><i class="fas fa-phone"></i> Contact</a>
-            </nav>
+    <!-- ===== COOKIE BANNER ===== -->
+    <div id="cookie-banner">
+        <p>🍪 <span style="color:#fff;">Hyper‑Reality Cookies</span> — by using this portal you agree to our <a onclick="openModal('privacy')">Privacy Protocol</a>.</p>
+        <button class="btn-cookie" onclick="acceptCookies()">⚡ Accept</button>
+    </div>
 
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </header>
+    <!-- ===== THREE.JS CANVAS ===== -->
+    <canvas id="three-canvas"></canvas>
 
-    <!-- ====== HERO ====== -->
-    <section class="hero" id="home">
-        <div class="container hero-grid">
-            <div class="hero-content">
-                <div class="section-label">
-                    <i class="fas fa-bolt"></i> Solar Inverter Experts
-                </div>
-                <h1>
-                    Power Your Future with<br />
-                    <span class="highlight">Solar Repair</span> Excellence
-                </h1>
-                <p>
-                    Rana Solar Repairing Lab — Kasur's trusted destination for
-                    solar inverter repair, NRE claims, and premium spare parts.
-                    We bring your solar systems back to life.
-                </p>
-                <div class="hero-badges">
-                    <span><i class="fas fa-check-circle"></i> 10+ Years Experience</span>
-                    <span><i class="fas fa-check-circle"></i> NRE Claim Center</span>
-                    <span><i class="fas fa-check-circle"></i> 100% Genuine Parts</span>
-                </div>
-                <div class="hero-btns">
-                    <a href="#contact" class="btn-primary">
-                        <i class="fas fa-headset"></i> Get a Quote
-                    </a>
-                    <a href="#services" class="btn-secondary">
-                        <i class="fas fa-tools"></i> Our Services
-                    </a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <h3 id="statRepairs">500+</h3>
-                        <p>Inverters Repaired</p>
-                    </div>
-                    <div class="stat">
-                        <h3 id="statParts">1200+</h3>
-                        <p>Genuine Parts Sold</p>
-                    </div>
-                    <div class="stat">
-                        <h3 id="statClients">98%</h3>
-                        <p>Client Satisfaction</p>
-                    </div>
-                </div>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <a href="#" class="logo-3d" onclick="navigateTo('home')">
+            <span class="icon-3d"><i class="fas fa-sun"></i></span>
+            <div class="brand-text">
+                RANA<span>SOLAR</span>
+                <span class="sub-tag">3D · Holographic</span>
             </div>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a onclick="navigateTo('home')" class="active">Home</a></li>
+            <li><a onclick="navigateTo('services')">Services</a></li>
+            <li><a onclick="navigateTo('products')">Products</a></li>
+            <li><a onclick="navigateTo('team')">Team</a></li>
+            <li><a onclick="navigateTo('contact')" class="btn-cta"><i class="fas fa-bolt"></i> Contact</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
 
-            <div class="hero-visual">
-                <div class="hero-3d-box">
-                    <div class="orb-ring"></div>
-                    <div class="orb-ring"></div>
-                    <div class="orb-ring"></div>
-                    <div class="center-icon"><i class="fas fa-solar-panel"></i></div>
-                    <div class="floating-badge"><i class="fas fa-microchip"></i> IGBT · MOSFET</div>
-                    <div class="floating-badge"><i class="fas fa-bolt"></i> MPPT Repair</div>
-                    <div class="floating-badge"><i class="fas fa-shield-alt"></i> NRE Claim</div>
-                </div>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="section-home">
+        <div class="hero-content">
+            <div class="glow-badge"><i class="fas fa-rotate"></i> NRE Claim Center · Kasur</div>
+            <h1>Solar <br />Hyper‑Reality</h1>
+            <p class="sub-title">Immersive 3D solar service experience. Inverter repair, NRE claims, and premium products — powered by next‑gen technology.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/923000041131" target="_blank" class="btn-primary-3d"><i class="fab fa-whatsapp"></i> Connect Now</a>
+                <a href="#section-services" class="btn-outline-3d"><i class="fas fa-chevron-circle-right"></i> Explore</a>
+            </div>
+            <div class="hero-stats-3d">
+                <div class="stat"><h3>10+</h3><p>Years Experience</p></div>
+                <div class="stat"><h3>500+</h3><p>Repairs</p></div>
+                <div class="stat"><h3>4.9★</h3><p>Rating</p></div>
             </div>
         </div>
     </section>
 
-    <!-- ====== ABOUT ====== -->
-    <section id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-image">
-                    <div class="placeholder-3d"><i class="fas fa-sun"></i></div>
-                    <div class="floating-tag">
-                        <i class="fas fa-map-pin" style="color:var(--orange);"></i>
-                        Kasur · Pakistan
-                    </div>
-                </div>
-                <div class="about-text">
-                    <div class="section-label"><i class="fas fa-info-circle"></i> About Us</div>
-                    <h3>Your Trusted Solar <span class="highlight">Repair Partner</span></h3>
-                    <p>
-                        Rana Solar Repairing Lab has been serving the Kasur community
-                        with top-tier solar inverter repair and maintenance. We are
-                        an authorized NRE solar inverter claim center, ensuring your
-                        warranties are honored.
-                    </p>
-                    <p>
-                        From simple board repairs to complex MPPT diagnostics, our
-                        team uses only original components — IGBT, MOSFET, optocouplers,
-                        and more — to restore your system's peak performance.
-                    </p>
-                    <ul class="about-features">
-                        <li><i class="fas fa-check-circle"></i> NRE Claim Center</li>
-                        <li><i class="fas fa-check-circle"></i> All Brands Supported</li>
-                        <li><i class="fas fa-check-circle"></i> Original Spare Parts</li>
-                        <li><i class="fas fa-check-circle"></i> 24/7 Quick Service</li>
-                    </ul>
-                </div>
+    <!-- ===== SERVICES ===== -->
+    <section class="section" id="section-services">
+        <div class="section-header reveal">
+            <div class="tag"><i class="fas fa-cube"></i> DIMENSIONS</div>
+            <h2>Our <span>Services</span></h2>
+            <p>Holographic‑grade solar solutions — from repairs to NRE claims.</p>
+        </div>
+        <div class="category-grid">
+            <div class="glass-card reveal"><div class="icon"><i class="fas fa-microchip"></i></div><h3>Inverter Repair</h3><p>All boards &amp; MPPTs</p><span class="badge">Expert</span></div>
+            <div class="glass-card reveal"><div class="icon"><i class="fas fa-file-invoice"></i></div><h3>NRE Claim Center</h3><p>Official claim processing</p><span class="badge">Authorized</span></div>
+            <div class="glass-card reveal"><div class="icon"><i class="fas fa-solar-panel"></i></div><h3>New Inverters</h3><p>INVEREX, Fronus &amp; more</p><span class="badge">In Stock</span></div>
+            <div class="glass-card reveal"><div class="icon"><i class="fas fa-plug"></i></div><h3>Components</h3><p>IGBT, MOSFET, Opto, Coils</p><span class="badge">Original</span></div>
+            <div class="glass-card reveal"><div class="icon"><i class="fas fa-tv"></i></div><h3>Displays &amp; Fans</h3><p>New panels, fans, choppers</p><span class="badge">Available</span></div>
+            <div class="glass-card reveal"><div class="icon"><i class="fas fa-tools"></i></div><h3>Solar Panels</h3><p>High‑efficiency panels</p><span class="badge">Premium</span></div>
+        </div>
+    </section>
+
+    <!-- ===== PRODUCTS ===== -->
+    <section class="section" id="section-products">
+        <div class="section-header reveal">
+            <div class="tag"><i class="fas fa-rotate-3d"></i> 3D COLLECTION</div>
+            <h2>New <span>Arrivals</span></h2>
+            <p>Flip to inquire or share — every product is a portal.</p>
+        </div>
+        <div class="product-grid">
+            <div class="flip-card reveal"><div class="flip-card-inner">
+                    <div class="flip-card-front"><div class="p-icon"><i class="fas fa-sun"></i></div><h4>INVEREX VEYRONII</h4><div class="p-desc">6000W · 48V</div><div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> 4.8</div></div>
+                    <div class="flip-card-back"><p style="color:#fff;font-weight:600;">⚡ Inquire Now</p><div class="share-btns"><a href="https://wa.me/923000041131?text=INVEREX%20VEYRONII" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com" target="_blank"><i class="fab fa-facebook"></i> Share</a><a href="https://twitter.com/intent/tweet?text=INVEREX%20VEYRONII%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-twitter"></i> Tweet</a></div></div>
+            </div></div>
+            <div class="flip-card reveal"><div class="flip-card-inner">
+                    <div class="flip-card-front"><div class="p-icon"><i class="fas fa-sun"></i></div><h4>Fronus Inverter</h4><div class="p-desc">High‑efficiency</div><div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5.0</div></div>
+                    <div class="flip-card-back"><p style="color:#fff;font-weight:600;">⚡ Inquire Now</p><div class="share-btns"><a href="https://wa.me/923000041131?text=Fronus%20Inverter" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com" target="_blank"><i class="fab fa-facebook"></i> Share</a><a href="https://twitter.com/intent/tweet?text=Fronus%20Inverter%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-twitter"></i> Tweet</a></div></div>
+            </div></div>
+            <div class="flip-card reveal"><div class="flip-card-inner">
+                    <div class="flip-card-front"><div class="p-icon"><i class="fas fa-microchip"></i></div><h4>New Main Board</h4><div class="p-desc">Original replacement</div><div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5.0</div></div>
+                    <div class="flip-card-back"><p style="color:#fff;font-weight:600;">⚡ Inquire Now</p><div class="share-btns"><a href="https://wa.me/923000041131?text=New%20Main%20Board" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com" target="_blank"><i class="fab fa-facebook"></i> Share</a><a href="https://twitter.com/intent/tweet?text=New%20Main%20Board%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-twitter"></i> Tweet</a></div></div>
+            </div></div>
+            <div class="flip-card reveal"><div class="flip-card-inner">
+                    <div class="flip-card-front"><div class="p-icon"><i class="fas fa-bolt"></i></div><h4>Chopper / Coil</h4><div class="p-desc">Premium quality</div><div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4.9</div></div>
+                    <div class="flip-card-back"><p style="color:#fff;font-weight:600;">⚡ Inquire Now</p><div class="share-btns"><a href="https://wa.me/923000041131?text=Chopper%20Coil" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com" target="_blank"><i class="fab fa-facebook"></i> Share</a><a href="https://twitter.com/intent/tweet?text=Chopper%20Coil%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-twitter"></i> Tweet</a></div></div>
+            </div></div>
+            <div class="flip-card reveal"><div class="flip-card-inner">
+                    <div class="flip-card-front"><div class="p-icon"><i class="fas fa-fan"></i></div><h4>Cooling Fan</h4><div class="p-desc">Original high‑speed</div><div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5.0</div></div>
+                    <div class="flip-card-back"><p style="color:#fff;font-weight:600;">⚡ Inquire Now</p><div class="share-btns"><a href="https://wa.me/923000041131?text=Cooling%20Fan" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com" target="_blank"><i class="fab fa-facebook"></i> Share</a><a href="https://twitter.com/intent/tweet?text=Cooling%20Fan%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-twitter"></i> Tweet</a></div></div>
+            </div></div>
+            <div class="flip-card reveal"><div class="flip-card-inner">
+                    <div class="flip-card-front"><div class="p-icon"><i class="fas fa-tv"></i></div><h4>Display Panel</h4><div class="p-desc">LCD / LED</div><div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4.8</div></div>
+                    <div class="flip-card-back"><p style="color:#fff;font-weight:600;">⚡ Inquire Now</p><div class="share-btns"><a href="https://wa.me/923000041131?text=Display%20Panel" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com" target="_blank"><i class="fab fa-facebook"></i> Share</a><a href="https://twitter.com/intent/tweet?text=Display%20Panel%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-twitter"></i> Tweet</a></div></div>
+            </div></div>
+        </div>
+    </section>
+
+    <!-- ===== TEAM ===== -->
+    <section class="section" id="section-team">
+        <div class="section-header reveal">
+            <div class="tag"><i class="fas fa-users"></i> HOLO‑TEAM</div>
+            <h2>Our <span>Team</span></h2>
+            <p>The minds behind the solar revolution.</p>
+        </div>
+        <div class="team-grid">
+            <div class="glass-card reveal"><div class="avatar"><i class="fas fa-user-tie"></i></div><h4>Rana Muhammad</h4><div class="role">Founder · Lead Engineer</div><div class="desc">15+ years in inverter repair &amp; NRE claims.</div><div class="team-socials"><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-tiktok"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a><a href="#"><i class="fab fa-linkedin"></i></a></div></div>
+            <div class="glass-card reveal"><div class="avatar"><i class="fas fa-user-cog"></i></div><h4>Ali Raza</h4><div class="role">Senior Technician</div><div class="desc">Specialist in MPPT boards &amp; system cards.</div><div class="team-socials"><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-tiktok"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a><a href="#"><i class="fab fa-linkedin"></i></a></div></div>
+            <div class="glass-card reveal"><div class="avatar"><i class="fas fa-user-astronaut"></i></div><h4>Usman Ghani</h4><div class="role">Component Specialist</div><div class="desc">IGBT, MOSFET, Optocoupler &amp; coils.</div><div class="team-socials"><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-tiktok"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a><a href="#"><i class="fab fa-linkedin"></i></a></div></div>
+            <div class="glass-card reveal"><div class="avatar"><i class="fas fa-user-headset"></i></div><h4>Imran Ashraf</h4><div class="role">Customer Support</div><div class="desc">Your point of contact for claims &amp; inquiries.</div><div class="team-socials"><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-tiktok"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a><a href="#"><i class="fab fa-linkedin"></i></a></div></div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section" id="section-contact">
+        <div class="section-header reveal">
+            <div class="tag"><i class="fas fa-paper-plane"></i> HYPER‑LINK</div>
+            <h2>Get in <span>Touch</span></h2>
+            <p>Send a message — we'll respond in light‑speed.</p>
+        </div>
+        <div class="contact-wrapper">
+            <form class="contact-form" onsubmit="handleContact(event)">
+                <input type="text" placeholder="Your Name" required />
+                <input type="email" placeholder="Your Email" required />
+                <select required><option value="">Select Service</option><option>Inverter Repair</option><option>New Inverter</option><option>MPPT / Board</option><option>Components</option><option>NRE Claim</option><option>Solar Panel</option><option>Other</option></select>
+                <textarea placeholder="Your Message..." required></textarea>
+                <button type="submit"><i class="fas fa-bolt"></i> Send Message</button>
+            </form>
+            <div class="contact-info">
+                <div class="item"><i class="fas fa-phone"></i> <a href="tel:03000041131">0300-0041131</a></div>
+                <div class="item"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/923000041131" target="_blank">0300-0041131</a></div>
+                <div class="item"><i class="fas fa-map-marker-alt"></i> Rana Solar Lab, Kasur</div>
+                <div class="item"><i class="fas fa-clock"></i> Mon–Sat: 9AM – 8PM</div>
+                <div class="item"><i class="fas fa-badge-check"></i> NRE Claim Center</div>
+                <div style="margin-top:1.5rem;"><label style="font-weight:600;color:#fff;display:block;margin-bottom:0.5rem;">📡 Subscribe to Quantum Updates</label><div class="newsletter-box"><input type="email" placeholder="Enter email" id="newsletterEmail" /><button onclick="subscribeNewsletter()"><i class="fas fa-paper-plane"></i> Subscribe</button></div></div>
             </div>
         </div>
     </section>
 
-    <!-- ====== SERVICES ====== -->
-    <section id="services" style="background: rgba(255,255,255,0.01);">
-        <div class="container">
-            <div class="section-header center">
-                <div class="section-label"><i class="fas fa-wrench"></i> What We Do</div>
-                <h2 class="section-title">Our <span class="highlight">Repair Services</span></h2>
-                <p class="section-sub">
-                    We repair all types of solar inverter boards, MPPTs, and power
-                    electronics with precision and care.
-                </p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="icon"><i class="fas fa-microchip"></i></div>
-                    <h4>Board Repair</h4>
-                    <p>Main board, system card, and display board repairs.</p>
-                    <span class="badge">All Brands</span>
-                </div>
-                <div class="service-card">
-                    <div class="icon"><i class="fas fa-solar-panel"></i></div>
-                    <h4>MPPT Repair</h4>
-                    <p>Solar MPPT diagnostics and component-level repair.</p>
-                    <span class="badge">Advanced</span>
-                </div>
-                <div class="service-card">
-                    <div class="icon"><i class="fas fa-exchange-alt"></i></div>
-                    <h4>Inverter Overhaul</h4>
-                    <p>Complete inverter servicing — chopper, coil, fan, and more.</p>
-                    <span class="badge">Full Service</span>
-                </div>
-                <div class="service-card">
-                    <div class="icon"><i class="fas fa-shield-alt"></i></div>
-                    <h4>NRE Claim Center</h4>
-                    <p>Authorized claim processing for NRE solar inverters.</p>
-                    <span class="badge">Official</span>
-                </div>
-            </div>
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="logo-3d" style="gap:0.5rem;"><span class="icon-3d"><i class="fas fa-sun"></i></span><div class="brand-text" style="font-size:1rem;">RANA<span>SOLAR</span><span class="sub-tag" style="font-size:0.5rem;">3D PORTAL</span></div></div>
+            <div class="footer-socials"><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-linkedin"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-tiktok"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div>
         </div>
-    </section>
-
-    <!-- ====== PRODUCTS ====== -->
-    <section id="products">
-        <div class="container">
-            <div class="section-header center">
-                <div class="section-label"><i class="fas fa-boxes"></i> Genuine Parts</div>
-                <h2 class="section-title">Premium <span class="highlight">Spare Parts</span></h2>
-                <p class="section-sub">
-                    Original components for all solar inverter brands — 100% authentic.
-                </p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="icon"><i class="fas fa-microchip"></i></div>
-                    <h4>Main Board</h4>
-                    <p>New main board available for all models.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon"><i class="fas fa-bolt"></i></div>
-                    <h4>Chopper</h4>
-                    <p>High-performance chopper modules.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon"><i class="fas fa-coil"></i></div>
-                    <h4>Coil</h4>
-                    <p>New coils for inverter power stages.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon"><i class="fas fa-fan"></i></div>
-                    <h4>Fan</h4>
-                    <p>Cooling fans for thermal management.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon"><i class="fas fa-sun"></i></div>
-                    <h4>Solar Inverters</h4>
-                    <p>New SUNLIFE, INVEREX, Fronus units.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon"><i class="fas fa-tachometer-alt"></i></div>
-                    <h4>Display</h4>
-                    <p>New display panels for all inverters.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon"><i class="fas fa-sd-card"></i></div>
-                    <h4>System Card</h4>
-                    <p>New system control cards.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon"><i class="fas fa-chart-line"></i></div>
-                    <h4>MPPT Module</h4>
-                    <p>New solar MPPT boards.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon"><i class="fas fa-bolt"></i></div>
-                    <h4>Capacitor</h4>
-                    <p>New capacitors for power circuits.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon"><i class="fas fa-solar-panel"></i></div>
-                    <h4>Solar Panel</h4>
-                    <p>New high-efficiency solar panels.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon"><i class="fas fa-eye"></i></div>
-                    <h4>Optocoupler</h4>
-                    <p>Original TLP350 optocouplers.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon"><i class="fas fa-cube"></i></div>
-                    <h4>IGBT</h4>
-                    <p>Original KGF 75N65KDF IGBTs.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon"><i class="fas fa-cubes"></i></div>
-                    <h4>MOSFET</h4>
-                    <p>New original MOSFETs in stock.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== TESTIMONIALS ====== -->
-    <section id="testimonials" style="background: rgba(255,255,255,0.01);">
-        <div class="container">
-            <div class="section-header center">
-                <div class="section-label"><i class="fas fa-star"></i> Testimonials</div>
-                <h2 class="section-title">What Our <span class="highlight">Clients Say</span></h2>
-                <p class="section-sub">Real reviews from our satisfied customers in Kasur and beyond.</p>
-            </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <blockquote>"Rana Solar repaired my inverter in record time. The team is knowledgeable and uses genuine parts. Highly recommended!"</blockquote>
-                    <div class="author">
-                        <div class="avatar">MA</div>
-                        <div><div class="name">Muhammad Ali</div><div class="role">Kasur</div></div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <blockquote>"They handled my NRE claim smoothly and got my inverter back up. Professional service from start to finish."</blockquote>
-                    <div class="author">
-                        <div class="avatar">SA</div>
-                        <div><div class="name">Sadia Ahmed</div><div class="role">Lahore</div></div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <blockquote>"Best solar repair lab in Kasur! They had the exact MOSFET and IGBT I needed. Fair pricing and honest work."</blockquote>
-                    <div class="author">
-                        <div class="avatar">UR</div>
-                        <div><div class="name">Usman Riaz</div><div class="role">Okara</div></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== FAQ ====== -->
-    <section id="faq">
-        <div class="container">
-            <div class="section-header center">
-                <div class="section-label"><i class="fas fa-question-circle"></i> FAQ</div>
-                <h2 class="section-title">Frequently Asked <span class="highlight">Questions</span></h2>
-                <p class="section-sub">Quick answers to the most common queries about our services.</p>
-            </div>
-            <div class="faq-list">
-                <div class="faq-item active">
-                    <button class="faq-question">
-                        <span>What brands of solar inverters do you repair?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">We repair all major brands including SUNLIFE, INVEREX, Fronus, and many others. Our lab is equipped to handle all types of solar inverter boards and MPPTs.</div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Are your spare parts original?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">Yes, 100%. We source only original components — IGBT, MOSFET, optocouplers, capacitors, and boards directly from authorized suppliers.</div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Do you handle NRE solar inverter claims?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">Absolutely. We are an authorized NRE solar inverter claim center. We handle the entire claim process for you, ensuring your warranty is honored.</div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>How long does a typical repair take?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">Most repairs are completed within 24–48 hours. Complex issues may take a bit longer, but we always keep you updated on progress.</div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Do you offer a warranty on repairs?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">Yes, all our repairs come with a service warranty. We stand behind our work and use only genuine parts to ensure long-term reliability.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== BLOG ====== -->
-    <section id="blog" style="background: rgba(255,255,255,0.01);">
-        <div class="container">
-            <div class="section-header center">
-                <div class="section-label"><i class="fas fa-newspaper"></i> Blog</div>
-                <h2 class="section-title">Latest <span class="highlight">Updates</span></h2>
-                <p class="section-sub">News, tips, and insights from our solar repair experts.</p>
-            </div>
-            <div class="blog-grid">
-                <div class="blog-card">
-                    <div class="thumb"><i class="fas fa-sun"></i></div>
-                    <div class="body">
-                        <span class="tag">Tips</span>
-                        <h4>5 Signs Your Solar Inverter Needs Repair</h4>
-                        <p>Learn the early warning signs of inverter failure and when to call a professional.</p>
-                        <div class="meta"><span><i class="fas fa-calendar-alt"></i> Aug 18, 2026</span><span><i class="fas fa-comment"></i> 12</span></div>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <div class="thumb"><i class="fas fa-shield-alt"></i></div>
-                    <div class="body">
-                        <span class="tag">Claim</span>
-                        <h4>How to File an NRE Solar Inverter Claim</h4>
-                        <p>Step-by-step guide to successfully process your NRE warranty claim.</p>
-                        <div class="meta"><span><i class="fas fa-calendar-alt"></i> Aug 10, 2026</span><span><i class="fas fa-comment"></i> 8</span></div>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <div class="thumb"><i class="fas fa-microchip"></i></div>
-                    <div class="body">
-                        <span class="tag">Tech</span>
-                        <h4>IGBT vs MOSFET: What's Best for Your Inverter?</h4>
-                        <p>Understanding the key differences and choosing the right component.</p>
-                        <div class="meta"><span><i class="fas fa-calendar-alt"></i> Jul 28, 2026</span><span><i class="fas fa-comment"></i> 15</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== CONTACT ====== -->
-    <section id="contact">
-        <div class="container">
-            <div class="section-header center">
-                <div class="section-label"><i class="fas fa-envelope"></i> Get in Touch</div>
-                <h2 class="section-title">Contact <span class="highlight">Us</span></h2>
-                <p class="section-sub">Reach out for repairs, parts, or any solar inverter inquiry.</p>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>Let's <span class="highlight">Talk Solar</span></h3>
-                    <p>Visit our lab in Kasur or reach us via phone. We're here to help.</p>
-                    <ul class="contact-details">
-                        <li>
-                            <i class="fas fa-phone-alt"></i>
-                            <div class="info">0300-0041131 <small>Main Line</small></div>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone-alt"></i>
-                            <div class="info">0300-4567102 <small>Alternate</small></div>
-                        </li>
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div class="info">Rana Solar Repairing Lab <small>Kasur, Pakistan</small></div>
-                        </li>
-                        <li>
-                            <i class="fas fa-clock"></i>
-                            <div class="info">Mon–Sat: 9:00 AM – 7:00 PM <small>Sunday: Closed</small></div>
-                        </li>
-                    </ul>
-                </div>
-                <form class="contact-form" id="contactForm">
-                    <h4>Send a Message</h4>
-                    <p class="sub">We'll get back to you within 24 hours.</p>
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" placeholder="Muhammad Rana" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" placeholder="you@example.com" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="text" id="phone" placeholder="0300-0000000" />
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" placeholder="Tell us about your inverter issue..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">
-                        <i class="fas fa-paper-plane"></i> Send Message
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== FOOTER ====== -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="#" class="logo">
-                        <div class="logo-icon"><i class="fas fa-sun"></i></div>
-                        <div>Rana Solar <span>Repair</span><small>Lab · Kasur</small></div>
-                    </a>
-                    <p>Kasur's trusted solar inverter repair lab &amp; NRE claim center. Quality parts, expert service.</p>
-                </div>
-                <div class="footer-col">
-                    <h5>Quick Links</h5>
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#services">Services</a>
-                    <a href="#products">Products</a>
-                </div>
-                <div class="footer-col">
-                    <h5>Support</h5>
-                    <a href="#faq">FAQ</a>
-                    <a href="#contact">Contact</a>
-                    <a href="#testimonials">Reviews</a>
-                    <a href="#blog">Blog</a>
-                </div>
-                <div class="footer-col">
-                    <h5>Legal</h5>
-                    <a href="#contact">Terms &amp; Conditions</a>
-                    <a href="#contact">Privacy Policy</a>
-                    <a href="#contact">Disclaimer</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span>&copy; 2026 Rana Solar Repairing Lab. All rights reserved.</span>
-                <div class="footer-social">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
+        <div class="footer-links"><a onclick="openModal('privacy')">Privacy Protocol</a><a onclick="openModal('terms')">Terms of Service</a><a onclick="openModal('cookie')">Cookie Policy</a><a onclick="openModal('disclaimer')">Disclaimer</a></div>
+        <div class="footer-bottom">
+            <div>&copy; <span id="year"></span> RANA SOLAR TRADERS — All rights reserved.</div>
+            <div>Powered by <a href="https://nexussolution603.github.io/in/" target="_blank">NEXUS SOLUTION</a></div>
+            <div class="protected"><i class="fas fa-lock"></i> Protected · 3D Experience</div>
         </div>
     </footer>
 
-    <!-- ====== BACK TO TOP ====== -->
-    <button class="back-top" id="backTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    <!-- ===== WHATSAPP FLOAT ===== -->
+    <a href="https://wa.me/923000041131" target="_blank" class="whatsapp-float" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
-    <!-- ====== SCRIPTS ====== -->
+    <!-- ===== LEGAL MODALS ===== -->
+    <div class="modal-overlay" id="modal-privacy"><div class="modal-box"><button class="modal-close" onclick="closeModal('privacy')">&times;</button><h2>Privacy Protocol</h2><p>Your data is encrypted and used solely for service delivery. We never share without consent.</p></div></div>
+    <div class="modal-overlay" id="modal-terms"><div class="modal-box"><button class="modal-close" onclick="closeModal('terms')">&times;</button><h2>Terms of Service</h2><p>By using this portal you agree to our terms. All services are performed with professional care.</p></div></div>
+    <div class="modal-overlay" id="modal-cookie"><div class="modal-box"><button class="modal-close" onclick="closeModal('cookie')">&times;</button><h2>Cookie Policy</h2><p>We use cookies to enhance your 3D experience and analyze traffic.</p></div></div>
+    <div class="modal-overlay" id="modal-disclaimer"><div class="modal-box"><button class="modal-close" onclick="closeModal('disclaimer')">&times;</button><h2>Disclaimer</h2><p>Information is provided "as is". RANA SOLAR is not liable for any damages.</p></div></div>
+
+    <!-- ============================================================
+    SCRIPTS — THREE.JS + INTERACTIONS
+    ============================================================ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js">
+    </script>
     <script>
-        // ====== 3D ORB BACKGROUND ======
-        (function() {
-            const canvas = document.getElementById('orb-canvas');
-            const ctx = canvas.getContext('2d');
-            let width, height;
-            const particles = [];
-            const count = 80;
-
-            function resize() {
-                width = canvas.width = window.innerWidth;
-                height = canvas.height = window.innerHeight;
-            }
-            window.addEventListener('resize', resize);
-            resize();
-
-            class Particle {
-                constructor() {
-                    this.reset();
+        // ============================================================
+        //  SECURITY
+        // ============================================================
+        (function security() {
+            document.addEventListener('contextmenu', e => { e.preventDefault();
+                document.getElementById('security-overlay').classList.add('show');
+                setTimeout(() => document.getElementById('security-overlay').classList.remove('show'), 2500); });
+            document.addEventListener('selectstart', e => e.preventDefault());
+            document.addEventListener('copy', e => e.preventDefault());
+            document.addEventListener('keydown', e => {
+                if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key.toUpperCase())) || (
+                        e.ctrlKey && ['U', 'S'].includes(e.key.toUpperCase()))) {
+                    e.preventDefault();
+                    document.getElementById('security-overlay').classList.add('show');
+                    setTimeout(() => document.getElementById('security-overlay').classList.remove('show'), 3000);
                 }
-                reset() {
-                    this.x = Math.random() * width;
-                    this.y = Math.random() * height;
-                    this.r = Math.random() * 2.5 + 0.8;
-                    this.dx = (Math.random() - 0.5) * 0.25;
-                    this.dy = (Math.random() - 0.5) * 0.25;
-                    this.o = Math.random() * 0.4 + 0.1;
-                }
-                update() {
-                    this.x += this.dx;
-                    this.y += this.dy;
-                    if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) this.reset();
-                }
-                draw() {
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(245, 158, 11, ${this.o})`;
-                    ctx.fill();
-                }
-            }
-
-            for (let i = 0; i < count; i++) particles.push(new Particle());
-
-            function drawLines() {
-                for (let i = 0; i < particles.length; i++) {
-                    for (let j = i + 1; j < particles.length; j++) {
-                        const dx = particles[i].x - particles[j].x;
-                        const dy = particles[i].y - particles[j].y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-                        if (dist < 140) {
-                            ctx.beginPath();
-                            ctx.moveTo(particles[i].x, particles[i].y);
-                            ctx.lineTo(particles[j].x, particles[j].y);
-                            ctx.strokeStyle = `rgba(245, 158, 11, ${0.06 * (1 - dist / 140)})`;
-                            ctx.lineWidth = 0.6;
-                            ctx.stroke();
-                        }
-                    }
-                }
-            }
-
-            function animate() {
-                ctx.clearRect(0, 0, width, height);
-                particles.forEach(p => { p.update();
-                    p.draw(); });
-                drawLines();
-                requestAnimationFrame(animate);
-            }
-            animate();
+            });
+            document.addEventListener('dragstart', e => e.preventDefault());
         })();
 
-        // ====== NAV ======
-        const header = document.getElementById('header');
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-        const navAnchors = navLinks.querySelectorAll('a');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('open');
-        });
-
-        navAnchors.forEach(a => {
-            a.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('open');
-            });
-        });
-
-        // ====== SCROLL EFFECTS ======
-        window.addEventListener('scroll', () => {
-            header.classList.toggle('scrolled', window.scrollY > 60);
-
-            // Back to top
-            const backTop = document.getElementById('backTop');
-            backTop.classList.toggle('visible', window.scrollY > 500);
-
-            // Active nav link
-            const sections = document.querySelectorAll('section[id]');
-            let current = '';
-            sections.forEach(s => {
-                const top = s.offsetTop - 100;
-                if (window.scrollY >= top) current = s.id;
-            });
-            navAnchors.forEach(a => {
-                a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-            });
-        });
-
-        // ====== BACK TO TOP ======
-        document.getElementById('backTop').addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // ====== FAQ ACCORDION ======
-        document.querySelectorAll('.faq-question').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const item = btn.closest('.faq-item');
-                const wasActive = item.classList.contains('active');
-                document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
-                if (!wasActive) item.classList.add('active');
-            });
-        });
-
-        // ====== CONTACT FORM ======
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const btn = this.querySelector('button[type="submit"]');
-            const original = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            btn.disabled = true;
-
-            setTimeout(() => {
-                btn.innerHTML = '<i class="fas fa-check-circle"></i> Message Sent!';
-                btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
-                setTimeout(() => {
-                    btn.innerHTML = original;
-                    btn.style.background = '';
-                    btn.disabled = false;
-                    this.reset();
-                }, 2500);
-            }, 1400);
-        });
-
-        // ====== COUNTER ANIMATION ======
-        function animateCounter(el, target, suffix = '') {
-            let current = 0;
-            const step = Math.ceil(target / 60);
-            const interval = setInterval(() => {
-                current += step;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(interval);
-                }
-                el.textContent = current + suffix;
-            }, 25);
+        // ============================================================
+        //  COOKIE
+        // ============================================================
+        function acceptCookies() {
+            document.getElementById('cookie-banner').style.display = 'none';
+            localStorage.setItem('cookiesAccepted', 'true');
+        }
+        if (localStorage.getItem('cookiesAccepted') === 'true') {
+            document.getElementById('cookie-banner').style.display = 'none';
         }
 
-        // Trigger counters on load with slight delay
-        setTimeout(() => {
-            const statRepairs = document.getElementById('statRepairs');
-            const statParts = document.getElementById('statParts');
-            const statClients = document.getElementById('statClients');
-            if (statRepairs) animateCounter(statRepairs, 500, '+');
-            if (statParts) animateCounter(statParts, 1200, '+');
-            if (statClients) animateCounter(statClients, 98, '%');
-        }, 600);
+        // ============================================================
+        //  MODALS
+        // ============================================================
+        function openModal(id) { document.getElementById('modal-' + id).classList.add('open');
+            document.body.style.overflow = 'hidden'; }
+
+        function closeModal(id) { document.getElementById('modal-' + id).classList.remove('open');
+            document.body.style.overflow = 'auto'; }
+        document.querySelectorAll('.modal-overlay').forEach(el => {
+            el.addEventListener('click', function(e) { if (e.target === this) { this.classList.remove('open');
+                    document.body.style.overflow = 'auto'; } });
+        });
+
+        // ============================================================
+        //  NAVIGATION + PORTAL TRANSITION
+        // ============================================================
+        const sections = { home: 'section-home', services: 'section-services', products: 'section-products',
+            team: 'section-team', contact: 'section-contact' };
+
+        function navigateTo(section) {
+            document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
+            document.querySelectorAll('.nav-links a').forEach(l => {
+                if (l.textContent.trim().toLowerCase() === section || (section === 'home' && l.textContent.trim()
+                        .toLowerCase() === 'home')) l.classList.add('active');
+            });
+            document.getElementById('navLinks').classList.remove('open');
+            const transition = document.getElementById('portal-transition');
+            transition.classList.add('active');
+            setTimeout(() => {
+                const target = document.getElementById(sections[section]);
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                transition.classList.remove('active');
+            }, 800);
+        }
+
+        // ============================================================
+        //  HAMBURGER
+        // ============================================================
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('open');
+        });
+
+        // ============================================================
+        //  CONTACT FORM
+        // ============================================================
+        function handleContact(e) {
+            e.preventDefault();
+            alert('✅ Message transmitted successfully! We\'ll respond shortly.');
+            e.target.reset();
+        }
+
+        // ============================================================
+        //  NEWSLETTER
+        // ============================================================
+        function subscribeNewsletter() {
+            const input = document.getElementById('newsletterEmail');
+            if (input.value && input.value.includes('@')) { alert('✅ Subscribed to Quantum Updates!');
+                input.value = ''; } else { alert('Please enter a valid email.'); }
+        }
+
+        // ============================================================
+        //  FOOTER YEAR
+        // ============================================================
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // ============================================================
+        //  SCROLL REVEAL
+        // ============================================================
+        const revealEls = document.querySelectorAll('.reveal');
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.15 });
+        revealEls.forEach(el => obs.observe(el));
+
+        // ============================================================
+        //  THREE.JS — 3D SOLAR SYSTEM + PORTAL
+        // ============================================================
+        (function initThree() {
+            const canvas = document.getElementById('three-canvas');
+            const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.setClearColor(0x05060a, 0);
+
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.set(0, 2, 12);
+            camera.lookAt(0, 0, 0);
+
+            // ---- Lights ----
+            const ambient = new THREE.AmbientLight(0x222244, 0.4);
+            scene.add(ambient);
+            const dirLight = new THREE.DirectionalLight(0xfbbf24, 1.2);
+            dirLight.position.set(5, 8, 6);
+            scene.add(dirLight);
+            const dirLight2 = new THREE.DirectionalLight(0x7c3aed, 0.6);
+            dirLight2.position.set(-5, -3, 8);
+            scene.add(dirLight2);
+            const pointLight = new THREE.PointLight(0xfbbf24, 0.8, 20);
+            pointLight.position.set(0, 2, 4);
+            scene.add(pointLight);
+
+            // ---- Main Portal Ring (golden) ----
+            const ringGeo = new THREE.TorusGeometry(2.8, 0.06, 32, 120);
+            const ringMat = new THREE.MeshStandardMaterial({
+                color: 0xfbbf24,
+                emissive: 0xfbbf24,
+                emissiveIntensity: 0.25,
+                metalness: 0.9,
+                roughness: 0.2,
+                transparent: true,
+                opacity: 0.8
+            });
+            const ring = new THREE.Mesh(ringGeo, ringMat);
+            ring.rotation.x = Math.PI / 2.4;
+            ring.rotation.z = 0.2;
+            scene.add(ring);
+
+            // Inner ring (purple/cyan)
+            const ringGeo2 = new THREE.TorusGeometry(2.3, 0.03, 24, 100);
+            const ringMat2 = new THREE.MeshStandardMaterial({
+                color: 0x7c3aed,
+                emissive: 0x22d3ee,
+                emissiveIntensity: 0.2,
+                metalness: 0.8,
+                roughness: 0.3,
+                transparent: true,
+                opacity: 0.5
+            });
+            const ring2 = new THREE.Mesh(ringGeo2, ringMat2);
+            ring2.rotation.x = Math.PI / 2.4 + 0.1;
+            ring2.rotation.z = -0.15;
+            scene.add(ring2);
+
+            // Outer glow ring
+            const glowGeo = new THREE.TorusGeometry(3.2, 0.015, 16, 140);
+            const glowMat = new THREE.MeshBasicMaterial({
+                color: 0xfbbf24,
+                transparent: true,
+                opacity: 0.15
+            });
+            const glowRing = new THREE.Mesh(glowGeo, glowMat);
+            glowRing.rotation.x = Math.PI / 2.4 - 0.05;
+            scene.add(glowRing);
+
+            // ---- Floating Solar Panel (3D cube) ----
+            const panelGroup = new THREE.Group();
+            const boxGeo = new THREE.BoxGeometry(1.2, 0.08, 0.8);
+            const boxMat = new THREE.MeshStandardMaterial({
+                color: 0x1e293b,
+                metalness: 0.7,
+                roughness: 0.2,
+                emissive: 0xfbbf24,
+                emissiveIntensity: 0.05
+            });
+            const box = new THREE.Mesh(boxGeo, boxMat);
+            box.position.set(0, 0, 0);
+            panelGroup.add(box);
+
+            // Grid lines on panel
+            const gridHelper = new THREE.GridHelper(1.4, 6, 0xfbbf24, 0xfbbf24);
+            gridHelper.position.y = 0.05;
+            gridHelper.material.transparent = true;
+            gridHelper.material.opacity = 0.15;
+            panelGroup.add(gridHelper);
+
+            // Small glowing dots
+            for (let i = 0; i < 12; i++) {
+                const dot = new THREE.Mesh(
+                    new THREE.SphereGeometry(0.03, 6, 6),
+                    new THREE.MeshBasicMaterial({ color: 0xfbbf24 })
+                );
+                const angle = (i / 12) * Math.PI * 2;
+                dot.position.set(Math.cos(angle) * 0.55, 0.06, Math.sin(angle) * 0.35);
+                panelGroup.add(dot);
+            }
+            panelGroup.position.set(0, -0.5, 0.5);
+            scene.add(panelGroup);
+
+            // ---- Particles (stars) ----
+            const pCount = 1200;
+            const pGeo = new THREE.BufferGeometry();
+            const pPos = new Float32Array(pCount * 3);
+            const pSizes = new Float32Array(pCount);
+            for (let i = 0; i < pCount; i++) {
+                const r = 6 + Math.random() * 14;
+                const theta = Math.random() * Math.PI * 2;
+                const phi = Math.acos((Math.random() * 2) - 1);
+                pPos[i * 3] = r * Math.sin(phi) * Math.cos(theta);
+                pPos[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta) * 0.5;
+                pPos[i * 3 + 2] = r * Math.cos(phi);
+                pSizes[i] = 0.02 + Math.random() * 0.06;
+            }
+            pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+            pGeo.setAttribute('size', new THREE.BufferAttribute(pSizes, 1));
+            const pMat = new THREE.PointsMaterial({
+                color: 0xfbbf24,
+                size: 0.04,
+                transparent: true,
+                opacity: 0.5,
+                blending: THREE.AdditiveBlending,
+                sizeAttenuation: true
+            });
+            const particles = new THREE.Points(pGeo, pMat);
+            scene.add(particles);
+
+            // ---- Mouse Parallax ----
+            let mouseX = 0,
+                mouseY = 0;
+            document.addEventListener('mousemove', (e) => {
+                mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+                mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+            });
+
+            // ---- Animation Loop ----
+            let time = 0;
+
+            function animate() {
+                requestAnimationFrame(animate);
+                time += 0.006;
+
+                // Rotate rings
+                ring.rotation.y += 0.005;
+                ring2.rotation.y -= 0.008;
+                glowRing.rotation.y += 0.003;
+
+                // Pulse
+                const pulse = 1 + Math.sin(time * 1.8) * 0.02;
+                ring.scale.set(pulse, pulse, pulse);
+                ring2.scale.set(1 + Math.sin(time * 1.8 + 0.5) * 0.015, 1 + Math.sin(time * 1.8 + 0.5) * 0.015, 1 + Math.sin(
+                    time * 1.8 + 0.5) * 0.015);
+
+                // Panel floating
+                panelGroup.position.y = -0.5 + Math.sin(time * 0.8) * 0.15;
+                panelGroup.rotation.x = Math.sin(time * 0.5) * 0.05;
+                panelGroup.rotation.z = Math.cos(time * 0.6) * 0.05;
+                panelGroup.rotation.y += 0.004;
+
+                // Particles slow rotation
+                particles.rotation.y += 0.0003;
+                particles.rotation.x += 0.0001;
+
+                // Mouse parallax on rings
+                ring.rotation.x = Math.PI / 2.4 + mouseY * 0.08;
+                ring.rotation.z = 0.2 + mouseX * 0.08;
+                ring2.rotation.x = Math.PI / 2.4 + 0.1 + mouseY * 0.06;
+                ring2.rotation.z = -0.15 + mouseX * 0.06;
+                glowRing.rotation.x = Math.PI / 2.4 - 0.05 + mouseY * 0.04;
+
+                // Camera slight movement
+                camera.position.x = mouseX * 0.3;
+                camera.position.y = 2 + mouseY * 0.2;
+                camera.lookAt(0, 0, 0);
+
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            // ---- Resize ----
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+        })();
+
+        console.log('⚡ RANA SOLAR 3D PORTAL — Next‑gen experience');
+        console.log('🔒 Protected by NEXUS SOLUTION');
     </script>
 </body>
 </html>
