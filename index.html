@@ -3,29 +3,59 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RANA SOLAR — 3D Portal System</title>
-    <meta name="description" content="RANA SOLAR TRADERS — Next‑gen solar service with 3D holographic experience. Inverter repair, NRE claims, solar products in Kasur." />
-    <meta name="keywords" content="solar inverter repair, 3D solar, NRE claim, Rana Solar, Kasur" />
+    <title>RANA SOLAR REPAIRING LAB — Solar Service System | Kasur</title>
+    
+    <!-- ===== COMPLETE SEO META TAGS ===== -->
+    <meta name="description" content="RANA SOLAR REPAIRING LAB – Solar inverter repair, NRE claims, new inverters, solar panels, and components in Kasur. 10+ years experience." />
+    <meta name="keywords" content="solar inverter repair, NRE claim, solar products, Rana Solar, Kasur, inverter components, solar panels, INVEREX, Fronus, MPPT, IGBT, optocoupler" />
+    <meta name="author" content="RANA SOLAR REPAIRING LAB" />
+    <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://ranasolar.com/" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="RANA SOLAR — 3D Holographic Portal" />
-    <meta property="og:description" content="Immersive 3D solar service experience. Inverter repair, NRE claims, products." />
+    
+    <!-- ===== OPEN GRAPH ===== -->
+    <meta property="og:title" content="RANA SOLAR REPAIRING LAB — Solar Service System" />
+    <meta property="og:description" content="Solar inverter repair, NRE claims, new inverters, solar panels, and components in Kasur." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ranasolar.com/" />
-    <meta property="og:image" content="https://ranasolar.com/og-3d.jpg" />
-
-    <!-- Schema -->
+    <meta property="og:image" content="https://placehold.co/1200x630/0b1120/fbbf24?text=RANA+SOLAR" />
+    <meta property="og:site_name" content="RANA SOLAR REPAIRING LAB" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- ===== TWITTER CARD ===== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="RANA SOLAR REPAIRING LAB — Solar Service System" />
+    <meta name="twitter:description" content="Premium solar services, inverter repair, NRE claims, and products." />
+    <meta name="twitter:image" content="https://placehold.co/1200x630/0b1120/fbbf24?text=RANA+SOLAR" />
+    <meta name="twitter:site" content="@ranasolar" />
+    
+    <!-- ===== SCHEMA STRUCTURED DATA ===== -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "name": "RANA SOLAR TRADERS",
+            "name": "RANA SOLAR REPAIRING LAB",
+            "alternateName": "RANA SOLAR REPAIRING LAB Kasur",
+            "description": "Solar inverter repair, NRE claims, solar panels, and components in Kasur.",
             "telephone": "+923000041131",
-            "address": { "@type": "PostalAddress", "addressLocality": "Kasur", "addressCountry": "Pakistan" }
+            "email": "info@ranasolar.com",
+            "url": "https://ranasolar.com/",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Kasur",
+                "addressCountry": "PK"
+            },
+            "openingHours": "Mo-Sa 09:00-20:00",
+            "priceRange": "$$",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "150"
+            }
         }
     </script>
 
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,11 +66,7 @@
         /* ============================================================
                    RESET & BASE — DARK HOLOGRAPHIC THEME
                 ============================================================ */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --gold: #fbbf24;
@@ -56,9 +82,7 @@
             --radius-lg: 18px;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -70,1067 +94,313 @@
             cursor: default;
         }
 
-        /* ============================================================
-                   SECURITY OVERLAY (Premium)
-                ============================================================ */
+        /* ===== SECURITY OVERLAY ===== */
         #security-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.92);
-            backdrop-filter: blur(24px);
-            z-index: 99999;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            color: #fff;
-            text-align: center;
-            padding: 2rem;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.92); backdrop-filter: blur(24px); z-index: 99999;
+            display: none; justify-content: center; align-items: center; flex-direction: column;
+            color: #fff; text-align: center; padding: 2rem;
         }
-        #security-overlay.show {
-            display: flex;
-        }
-        #security-overlay i {
-            font-size: 5rem;
-            color: var(--gold);
-            margin-bottom: 1.5rem;
-            animation: pulseIcon 1.5s ease-in-out infinite;
-        }
-        @keyframes pulseIcon {
-            0%,
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-            50% {
-                transform: scale(1.2);
-                opacity: 0.6;
-            }
-        }
-        #security-overlay h3 {
-            font-size: 2.2rem;
-            font-family: 'Orbitron', monospace;
-            letter-spacing: 2px;
-        }
-        #security-overlay p {
-            color: var(--text-muted);
-            max-width: 480px;
-            margin-top: 0.5rem;
-            font-size: 1.1rem;
-        }
+        #security-overlay.show { display: flex; }
+        #security-overlay i { font-size: 5rem; color: var(--gold); margin-bottom: 1.5rem; animation: pulseIcon 1.5s ease-in-out infinite; }
+        @keyframes pulseIcon { 0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.2);opacity:.6} }
+        #security-overlay h3 { font-size: 2.2rem; font-family: 'Orbitron', monospace; letter-spacing: 2px; }
+        #security-overlay p { color: var(--text-muted); max-width: 480px; margin-top: 0.5rem; font-size: 1.1rem; }
 
-        /* ============================================================
-                   COOKIE BANNER — Glass
-                ============================================================ */
+        /* ===== COOKIE BANNER ===== */
         #cookie-banner {
-            position: fixed;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 99998;
-            background: rgba(5, 6, 10, 0.85);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border-glass);
-            border-radius: 60px;
-            padding: 0.8rem 2rem 0.8rem 2.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
-            max-width: 90%;
+            position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 99998;
+            background: rgba(5,6,10,0.85); backdrop-filter: blur(20px); border: 1px solid var(--border-glass);
+            border-radius: 60px; padding: 0.8rem 2rem 0.8rem 2.5rem; display: flex; align-items: center;
+            gap: 1.5rem; flex-wrap: wrap; justify-content: center; box-shadow: 0 20px 60px rgba(0,0,0,0.7); max-width: 90%;
         }
-        #cookie-banner p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-        #cookie-banner a {
-            color: var(--gold);
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: underline;
-        }
-        #cookie-banner .btn-cookie {
-            background: var(--gold);
-            color: #05060a;
-            border: none;
-            padding: 0.5rem 2rem;
-            border-radius: 40px;
-            font-weight: 700;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: 0.3s;
-            font-family: 'Inter', sans-serif;
-        }
-        #cookie-banner .btn-cookie:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 40px rgba(251, 191, 36, 0.3);
-        }
+        #cookie-banner p { font-size: 0.9rem; color: var(--text-muted); }
+        #cookie-banner a { color: var(--gold); font-weight: 600; cursor: pointer; text-decoration: underline; }
+        #cookie-banner .btn-cookie { background: var(--gold); color: #05060a; border: none; padding: 0.5rem 2rem; border-radius: 40px; font-weight: 700; cursor: pointer; font-size: 0.9rem; transition: 0.3s; font-family: 'Inter', sans-serif; }
+        #cookie-banner .btn-cookie:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(251,191,36,0.3); }
 
-        /* ============================================================
-                   THREE.JS CANVAS — Fullscreen 3D
-                ============================================================ */
-        #three-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-        }
+        /* ===== THREE.JS CANVAS ===== */
+        #three-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
 
-        /* ============================================================
-                   PORTAL TRANSITION OVERLAY
-                ============================================================ */
+        /* ===== PORTAL TRANSITION ===== */
         #portal-transition {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 9999;
-            pointer-events: none;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            background: #05060a;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999;
+            pointer-events: none; display: none; justify-content: center; align-items: center; background: #05060a;
         }
-        #portal-transition.active {
-            display: flex;
-            animation: portalFlash 0.9s ease-in-out;
-        }
+        #portal-transition.active { display: flex; animation: portalFlash 0.9s ease-in-out; }
         @keyframes portalFlash {
-            0% {
-                opacity: 0;
-                transform: scale(0.3);
-                border-radius: 50%;
-            }
-            40% {
-                opacity: 1;
-                transform: scale(1.3);
-                border-radius: 10%;
-                box-shadow: 0 0 200px rgba(251, 191, 36, 0.6);
-            }
-            100% {
-                opacity: 0;
-                transform: scale(2);
-                border-radius: 0%;
-            }
+            0%{opacity:0;transform:scale(0.3);border-radius:50%}
+            40%{opacity:1;transform:scale(1.3);border-radius:10%;box-shadow:0 0 200px rgba(251,191,36,0.6)}
+            100%{opacity:0;transform:scale(2);border-radius:0%}
         }
         #portal-transition .ring {
-            width: 400px;
-            height: 400px;
-            border: 6px solid var(--gold);
-            border-radius: 50%;
-            box-shadow: 0 0 120px rgba(251, 191, 36, 0.5), inset 0 0 120px rgba(251, 191, 36, 0.1);
+            width: 400px; height: 400px; border: 6px solid var(--gold); border-radius: 50%;
+            box-shadow: 0 0 120px rgba(251,191,36,0.5), inset 0 0 120px rgba(251,191,36,0.1);
             animation: spinRing 1s linear infinite;
         }
-        @keyframes spinRing {
-            0% {
-                transform: rotate(0deg) scale(0.3);
-                opacity: 1;
-            }
-            100% {
-                transform: rotate(720deg) scale(2.5);
-                opacity: 0;
-            }
-        }
+        @keyframes spinRing { 0%{transform:rotate(0deg) scale(0.3);opacity:1} 100%{transform:rotate(720deg) scale(2.5);opacity:0} }
 
-        /* ============================================================
-                   GLASS NAVBAR — Holographic
-                ============================================================ */
+        /* ===== GLASS NAVBAR ===== */
         .navbar {
-            position: fixed;
-            top: 1.2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
-            background: rgba(5, 6, 10, 0.6);
-            backdrop-filter: blur(24px);
-            border: 1px solid var(--border-glass);
-            border-radius: 80px;
-            padding: 0.5rem 1.8rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 92%;
-            max-width: 1200px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            transition: 0.3s;
+            position: fixed; top: 1.2rem; left: 50%; transform: translateX(-50%); z-index: 1000;
+            background: rgba(5,6,10,0.6); backdrop-filter: blur(24px); border: 1px solid var(--border-glass);
+            border-radius: 80px; padding: 0.5rem 1.8rem; display: flex; justify-content: space-between;
+            align-items: center; width: 92%; max-width: 1200px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); transition: 0.3s;
         }
+        .logo-3d { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; }
+        .logo-3d .icon-3d { font-size: 1.8rem; color: var(--gold); filter: drop-shadow(0 0 20px var(--gold-glow)); }
+        .logo-3d .brand-text { font-family: 'Orbitron', monospace; font-weight: 800; font-size: 1.2rem; letter-spacing: 1px; }
+        .logo-3d .brand-text span { color: var(--gold); }
+        .logo-3d .sub-tag { font-size: 0.55rem; font-weight: 400; color: var(--text-muted); letter-spacing: 2px; display: block; margin-top: -2px; text-transform: uppercase; }
 
-        .logo-3d {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            text-decoration: none;
-        }
-        .logo-3d .icon-3d {
-            font-size: 1.8rem;
-            color: var(--gold);
-            filter: drop-shadow(0 0 20px var(--gold-glow));
-        }
-        .logo-3d .brand-text {
-            font-family: 'Orbitron', monospace;
-            font-weight: 800;
-            font-size: 1.2rem;
-            letter-spacing: 1px;
-        }
-        .logo-3d .brand-text span {
-            color: var(--gold);
-        }
-        .logo-3d .sub-tag {
-            font-size: 0.55rem;
-            font-weight: 400;
-            color: var(--text-muted);
-            letter-spacing: 2px;
-            display: block;
-            margin-top: -2px;
-            text-transform: uppercase;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 0.5rem;
-            list-style: none;
-            align-items: center;
-        }
+        .nav-links { display: flex; gap: 0.5rem; list-style: none; align-items: center; }
         .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 40px;
-            transition: 0.3s;
-            cursor: pointer;
-            font-family: 'Inter', sans-serif;
-            letter-spacing: 0.3px;
+            color: var(--text-muted); text-decoration: none; font-size: 0.85rem; font-weight: 500;
+            padding: 0.5rem 1rem; border-radius: 40px; transition: 0.3s; cursor: pointer;
+            font-family: 'Inter', sans-serif; letter-spacing: 0.3px;
         }
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: #fff;
-            background: rgba(251, 191, 36, 0.12);
-            box-shadow: 0 0 30px rgba(251, 191, 36, 0.05);
-        }
-        .nav-links .btn-cta {
-            background: var(--gold);
-            color: #05060a;
-            font-weight: 700;
-            padding: 0.5rem 1.6rem;
-            box-shadow: 0 0 40px rgba(251, 191, 36, 0.2);
-        }
-        .nav-links .btn-cta:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 60px rgba(251, 191, 36, 0.4);
-            background: #fcd34d;
-        }
+        .nav-links a:hover, .nav-links a.active { color: #fff; background: rgba(251,191,36,0.12); box-shadow: 0 0 30px rgba(251,191,36,0.05); }
+        .nav-links .btn-cta { background: var(--gold); color: #05060a; font-weight: 700; padding: 0.5rem 1.6rem; box-shadow: 0 0 40px rgba(251,191,36,0.2); }
+        .nav-links .btn-cta:hover { transform: scale(1.05); box-shadow: 0 0 60px rgba(251,191,36,0.4); background: #fcd34d; }
 
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-        .hamburger span {
-            width: 26px;
-            height: 2px;
-            background: #fff;
-            border-radius: 4px;
-            transition: 0.3s;
-        }
+        .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
+        .hamburger span { width: 26px; height: 2px; background: #fff; border-radius: 4px; transition: 0.3s; }
 
-        /* ============================================================
-                   HERO — 3D Immersive
-                ============================================================ */
+        /* ===== HERO — Clean 3D ===== */
         .hero {
-            position: relative;
-            z-index: 1;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 8rem 2rem 4rem;
-            text-align: center;
-            pointer-events: none;
+            position: relative; z-index: 1; min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            padding: 8rem 2rem 4rem; text-align: center; pointer-events: none;
         }
-        .hero-content {
-            pointer-events: auto;
-            max-width: 900px;
-        }
+        .hero-content { pointer-events: auto; max-width: 900px; }
         .hero-content .glow-badge {
-            display: inline-block;
-            background: rgba(251, 191, 36, 0.1);
-            border: 1px solid rgba(251, 191, 36, 0.2);
-            padding: 0.3rem 1.8rem;
-            border-radius: 60px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--gold);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            backdrop-filter: blur(8px);
-            margin-bottom: 2rem;
-            font-family: 'Orbitron', monospace;
+            display: inline-block; background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.2);
+            padding: 0.3rem 1.8rem; border-radius: 60px; font-size: 0.75rem; font-weight: 600;
+            color: var(--gold); letter-spacing: 3px; text-transform: uppercase; backdrop-filter: blur(8px);
+            margin-bottom: 2rem; font-family: 'Orbitron', monospace;
         }
         .hero-content h1 {
-            font-family: 'Orbitron', monospace;
-            font-size: 5.5rem;
-            font-weight: 900;
-            line-height: 1.05;
+            font-family: 'Orbitron', monospace; font-size: 4.5rem; font-weight: 900; line-height: 1.05;
             background: linear-gradient(135deg, #fff 30%, var(--gold) 60%, var(--purple) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 80px rgba(251, 191, 36, 0.15));
-            letter-spacing: -1px;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 80px rgba(251,191,36,0.15)); letter-spacing: -1px;
         }
         .hero-content .sub-title {
-            font-size: 1.3rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 1.5rem auto 2.5rem;
-            line-height: 1.8;
-            font-weight: 300;
-            letter-spacing: 0.5px;
+            font-size: 1.2rem; color: var(--text-muted); max-width: 600px;
+            margin: 1.5rem auto 2.5rem; line-height: 1.8; font-weight: 300; letter-spacing: 0.5px;
         }
-        .hero-buttons {
-            display: flex;
-            gap: 1.2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+        .hero-buttons { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
         .btn-primary-3d {
-            background: linear-gradient(135deg, var(--gold), #f59e0b);
-            color: #05060a;
-            padding: 0.9rem 2.8rem;
-            border-radius: 60px;
-            font-weight: 700;
-            font-size: 1.05rem;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.8rem;
-            transition: 0.4s;
-            box-shadow: 0 0 60px rgba(251, 191, 36, 0.2);
-            font-family: 'Inter', sans-serif;
-            border: none;
-            cursor: pointer;
+            background: linear-gradient(135deg, var(--gold), #f59e0b); color: #05060a;
+            padding: 0.9rem 2.8rem; border-radius: 60px; font-weight: 700; font-size: 1.05rem;
+            text-decoration: none; display: inline-flex; align-items: center; gap: 0.8rem;
+            transition: 0.4s; box-shadow: 0 0 60px rgba(251,191,36,0.2);
+            font-family: 'Inter', sans-serif; border: none; cursor: pointer;
         }
-        .btn-primary-3d:hover {
-            transform: translateY(-4px) scale(1.03);
-            box-shadow: 0 20px 80px rgba(251, 191, 36, 0.4);
-        }
+        .btn-primary-3d:hover { transform: translateY(-4px) scale(1.03); box-shadow: 0 20px 80px rgba(251,191,36,0.4); }
         .btn-outline-3d {
-            background: rgba(255, 255, 255, 0.04);
-            color: #fff;
-            padding: 0.9rem 2.8rem;
-            border-radius: 60px;
-            font-weight: 600;
-            font-size: 1.05rem;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.8rem;
-            border: 1px solid var(--border-glass);
-            transition: 0.4s;
-            backdrop-filter: blur(8px);
-            font-family: 'Inter', sans-serif;
-            cursor: pointer;
+            background: rgba(255,255,255,0.04); color: #fff; padding: 0.9rem 2.8rem; border-radius: 60px;
+            font-weight: 600; font-size: 1.05rem; text-decoration: none; display: inline-flex;
+            align-items: center; gap: 0.8rem; border: 1px solid var(--border-glass); transition: 0.4s;
+            backdrop-filter: blur(8px); font-family: 'Inter', sans-serif; cursor: pointer;
         }
-        .btn-outline-3d:hover {
-            border-color: var(--gold);
-            color: var(--gold);
-            transform: translateY(-4px);
-            box-shadow: 0 0 60px rgba(251, 191, 36, 0.05);
-        }
+        .btn-outline-3d:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-4px); box-shadow: 0 0 60px rgba(251,191,36,0.05); }
 
         .hero-stats-3d {
-            display: flex;
-            gap: 4rem;
-            justify-content: center;
-            margin-top: 4rem;
-            padding-top: 2.5rem;
-            border-top: 1px solid var(--border-glass);
+            display: flex; gap: 4rem; justify-content: center; margin-top: 4rem;
+            padding-top: 2.5rem; border-top: 1px solid var(--border-glass); flex-wrap: wrap;
         }
-        .hero-stats-3d .stat h3 {
-            font-family: 'Orbitron', monospace;
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--gold);
-            text-shadow: 0 0 40px rgba(251, 191, 36, 0.2);
-        }
-        .hero-stats-3d .stat p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-weight: 400;
-        }
+        .hero-stats-3d .stat h3 { font-family: 'Orbitron', monospace; font-size: 2.5rem; font-weight: 800; color: var(--gold); text-shadow: 0 0 40px rgba(251,191,36,0.2); }
+        .hero-stats-3d .stat p { color: var(--text-muted); font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 400; }
 
-        /* ============================================================
-                   SECTIONS — Glass Holographic
-                ============================================================ */
-        .section {
-            position: relative;
-            z-index: 1;
-            padding: 5rem 2rem;
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
+        /* ===== SECTIONS ===== */
+        .section { position: relative; z-index: 1; padding: 5rem 2rem; max-width: 1300px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
         .section-header .tag {
-            display: inline-block;
-            font-family: 'Orbitron', monospace;
-            font-size: 0.7rem;
-            color: var(--gold);
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            background: rgba(251, 191, 36, 0.08);
-            padding: 0.2rem 1.2rem;
-            border-radius: 40px;
-            border: 1px solid rgba(251, 191, 36, 0.1);
-            margin-bottom: 0.8rem;
+            display: inline-block; font-family: 'Orbitron', monospace; font-size: 0.7rem;
+            color: var(--gold); letter-spacing: 4px; text-transform: uppercase;
+            background: rgba(251,191,36,0.08); padding: 0.2rem 1.2rem; border-radius: 40px;
+            border: 1px solid rgba(251,191,36,0.1); margin-bottom: 0.8rem;
         }
-        .section-header h2 {
-            font-family: 'Orbitron', monospace;
-            font-size: 3.2rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-        .section-header h2 span {
-            color: var(--gold);
-            text-shadow: 0 0 40px rgba(251, 191, 36, 0.1);
-        }
-        .section-header p {
-            color: var(--text-muted);
-            max-width: 550px;
-            margin: 0.8rem auto 0;
-            font-size: 1.05rem;
-            font-weight: 300;
-        }
+        .section-header h2 { font-family: 'Orbitron', monospace; font-size: 3.2rem; font-weight: 800; letter-spacing: -0.5px; }
+        .section-header h2 span { color: var(--gold); text-shadow: 0 0 40px rgba(251,191,36,0.1); }
+        .section-header p { color: var(--text-muted); max-width: 550px; margin: 0.8rem auto 0; font-size: 1.05rem; font-weight: 300; }
 
         /* ---- Glass Cards ---- */
         .glass-card {
-            background: var(--glass);
-            backdrop-filter: blur(16px);
-            border: 1px solid var(--border-glass);
-            border-radius: var(--radius-lg);
-            padding: 2rem 1.8rem;
-            transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            background: var(--glass); backdrop-filter: blur(16px); border: 1px solid var(--border-glass);
+            border-radius: var(--radius-lg); padding: 2rem 1.8rem;
+            transition: 0.5s cubic-bezier(0.23,1,0.32,1); height: 100%;
         }
-        .glass-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            border-color: rgba(251, 191, 36, 0.2);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
-        }
+        .glass-card:hover { transform: translateY(-10px) scale(1.02); border-color: rgba(251,191,36,0.2); box-shadow: 0 30px 80px rgba(0,0,0,0.4); }
 
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-        .category-grid .glass-card {
-            text-align: center;
-            cursor: default;
-        }
-        .category-grid .glass-card .icon {
-            font-size: 2.8rem;
-            color: var(--gold);
-            margin-bottom: 0.8rem;
-            filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.15));
-        }
-        .category-grid .glass-card h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-        .category-grid .glass-card p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            margin: 0.3rem 0 0.8rem;
-        }
-        .category-grid .glass-card .badge {
-            display: inline-block;
-            background: var(--gold);
-            color: #05060a;
-            font-size: 0.65rem;
-            font-weight: 700;
-            padding: 0.2rem 1rem;
-            border-radius: 30px;
-            letter-spacing: 0.5px;
-        }
+        /* ---- Services ---- */
+        .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 2rem; }
+        .category-grid .glass-card { text-align: center; cursor: default; }
+        .category-grid .glass-card .icon { font-size: 2.8rem; color: var(--gold); margin-bottom: 0.8rem; filter: drop-shadow(0 0 20px rgba(251,191,36,0.15)); }
+        .category-grid .glass-card h3 { font-size: 1.1rem; font-weight: 600; }
+        .category-grid .glass-card p { color: var(--text-muted); font-size: 0.85rem; margin: 0.3rem 0 0.8rem; }
+        .category-grid .glass-card .badge { display: inline-block; background: var(--gold); color: #05060a; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 1rem; border-radius: 30px; letter-spacing: 0.5px; }
 
-        /* ---- Product 3D Flip Cards ---- */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2rem;
+        /* ---- Product Grid (No Flip, Clean Cards) ---- */
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 2rem; }
+        .product-card {
+            background: var(--glass); backdrop-filter: blur(16px); border: 1px solid var(--border-glass);
+            border-radius: var(--radius-lg); padding: 1.5rem; transition: 0.5s cubic-bezier(0.23,1,0.32,1);
+            text-align: center; display: flex; flex-direction: column; align-items: center;
         }
-        .flip-card {
-            perspective: 1200px;
-            height: 100%;
+        .product-card:hover { transform: translateY(-10px) scale(1.02); border-color: rgba(251,191,36,0.3); box-shadow: 0 30px 80px rgba(0,0,0,0.4); }
+        .product-card .product-img {
+            width: 100px; height: 100px; border-radius: 50%; object-fit: cover;
+            border: 3px solid var(--gold); margin-bottom: 0.8rem;
+            background: #0d111a;
         }
-        .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-            transform-style: preserve-3d;
+        .product-card h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.2rem; }
+        .product-card .p-desc { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.3rem; }
+        .product-card .p-price { color: var(--gold); font-weight: 700; font-size: 1.1rem; margin-bottom: 0.3rem; }
+        .product-card .p-rating { color: var(--gold); font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .product-card .p-badge { display: inline-block; background: var(--gold); color: #05060a; font-size: 0.6rem; font-weight: 700; padding: 0.15rem 0.8rem; border-radius: 30px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.8rem; }
+        .product-card .share-btns { display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; }
+        .product-card .share-btns a {
+            padding: 0.3rem 0.8rem; border-radius: 40px; font-size: 0.75rem; text-decoration: none;
+            display: inline-flex; align-items: center; gap: 0.3rem; transition: 0.3s;
+            background: rgba(255,255,255,0.06); color: var(--text-muted);
         }
-        .flip-card:hover .flip-card-inner {
-            transform: rotateY(180deg);
-        }
-        .flip-card-front,
-        .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: var(--radius-lg);
-            padding: 1.8rem 1.5rem;
-            background: var(--glass);
-            backdrop-filter: blur(16px);
-            border: 1px solid var(--border-glass);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .flip-card-front {
-            align-items: center;
-            text-align: center;
-        }
-        .flip-card-front .p-icon {
-            font-size: 3rem;
-            color: var(--gold);
-            margin-bottom: 0.5rem;
-            filter: drop-shadow(0 0 30px rgba(251, 191, 36, 0.1));
-        }
-        .flip-card-front h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-        .flip-card-front .p-desc {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            flex: 1;
-        }
-        .flip-card-front .p-rating {
-            color: var(--gold);
-            font-size: 0.9rem;
-            margin: 0.5rem 0;
-        }
-        .flip-card-back {
-            transform: rotateY(180deg);
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            gap: 1rem;
-        }
-        .flip-card-back .share-btns {
-            display: flex;
-            gap: 0.8rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .flip-card-back .share-btns a {
-            background: rgba(255, 255, 255, 0.06);
-            color: var(--text-muted);
-            padding: 0.4rem 1rem;
-            border-radius: 40px;
-            font-size: 0.8rem;
-            text-decoration: none;
-            transition: 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-        .flip-card-back .share-btns a:hover {
-            background: var(--gold);
-            color: #05060a;
-        }
-        .flip-card-back .btn-wa {
-            background: #25D366;
-            color: #fff !important;
-        }
-        .flip-card-back .btn-wa:hover {
-            background: #1ebe5c !important;
-        }
+        .product-card .share-btns a:hover { background: var(--gold); color: #05060a; }
+        .product-card .share-btns .btn-wa { background: #25D366; color: #fff !important; }
+        .product-card .share-btns .btn-wa:hover { background: #1ebe5c !important; }
 
         /* ---- Team ---- */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2.5rem;
-        }
-        .team-grid .glass-card {
-            text-align: center;
-        }
-        .team-grid .glass-card .avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--gold), var(--purple));
-            margin: 0 auto 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.8rem;
-            color: #05060a;
-            font-weight: 700;
-            box-shadow: 0 0 60px rgba(251, 191, 36, 0.1);
-        }
-        .team-grid .glass-card h4 {
-            font-size: 1.1rem;
-        }
-        .team-grid .glass-card .role {
-            color: var(--gold);
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin: 0.2rem 0 0.5rem;
-        }
-        .team-grid .glass-card .desc {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-        .team-socials {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
-        .team-socials a {
-            color: var(--text-muted);
-            background: rgba(255, 255, 255, 0.04);
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.3s;
-            text-decoration: none;
-        }
-        .team-socials a:hover {
-            color: #fff;
-            background: var(--gold);
-            transform: scale(1.15);
-        }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 2.5rem; }
+        .team-grid .glass-card { text-align: center; }
+        .team-grid .glass-card .avatar { width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--purple)); margin: 0 auto 1.2rem; display: flex; align-items: center; justify-content: center; font-size: 2.8rem; color: #05060a; font-weight: 700; box-shadow: 0 0 60px rgba(251,191,36,0.1); }
+        .team-grid .glass-card h4 { font-size: 1.1rem; }
+        .team-grid .glass-card .role { color: var(--gold); font-size: 0.85rem; font-weight: 600; margin: 0.2rem 0 0.5rem; }
+        .team-grid .glass-card .desc { color: var(--text-muted); font-size: 0.85rem; }
+        .team-socials { display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem; }
+        .team-socials a { color: var(--text-muted); background: rgba(255,255,255,0.04); width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; text-decoration: none; }
+        .team-socials a:hover { color: #fff; background: var(--gold); transform: scale(1.15); }
+
+        /* ---- Testimonials ---- */
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 2rem; }
+        .testimonial-grid .glass-card { text-align: center; }
+        .testimonial-grid .glass-card .stars { color: var(--gold); font-size: 1.2rem; margin-bottom: 0.8rem; }
+        .testimonial-grid .glass-card .quote { color: var(--text-muted); font-style: italic; font-size: 0.95rem; line-height: 1.6; }
+        .testimonial-grid .glass-card .client { margin-top: 0.8rem; color: #fff; font-weight: 600; }
+        .testimonial-grid .glass-card .client-role { color: var(--text-muted); font-size: 0.8rem; }
+
+        /* ---- Blog ---- */
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 2rem; }
+        .blog-grid .glass-card { overflow: hidden; padding: 0; }
+        .blog-grid .glass-card .blog-img { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid var(--border-glass); }
+        .blog-grid .glass-card .blog-body { padding: 1.5rem; }
+        .blog-grid .glass-card .blog-body h4 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .blog-grid .glass-card .blog-body p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; }
+        .blog-grid .glass-card .blog-body a { color: var(--gold); text-decoration: none; font-weight: 600; transition: 0.3s; }
+        .blog-grid .glass-card .blog-body a:hover { color: #fff; }
+
+        /* ---- FAQ ---- */
+        .faq-grid { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: var(--glass); backdrop-filter: blur(16px); border: 1px solid var(--border-glass); border-radius: var(--radius-lg); margin-bottom: 1rem; overflow: hidden; }
+        .faq-item .faq-question { width: 100%; padding: 1.2rem 1.8rem; background: transparent; border: none; color: #fff; font-size: 1.05rem; font-weight: 600; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; font-family: 'Inter', sans-serif; }
+        .faq-item .faq-question:hover { color: var(--gold); }
+        .faq-item .faq-question i { transition: 0.3s; color: var(--gold); }
+        .faq-item .faq-question.active i { transform: rotate(180deg); }
+        .faq-item .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; padding: 0 1.8rem; color: var(--text-muted); line-height: 1.6; }
+        .faq-item .faq-answer.open { max-height: 300px; padding: 0 1.8rem 1.5rem; }
 
         /* ---- Contact ---- */
-        .contact-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+        .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+        .contact-form input, .contact-form textarea, .contact-form select {
+            width: 100%; padding: 0.9rem 1.2rem; background: var(--glass); border: 1px solid var(--border-glass);
+            border-radius: var(--radius-lg); color: #fff; font-size: 1rem; margin-bottom: 1rem;
+            transition: 0.3s; font-family: 'Inter', sans-serif; backdrop-filter: blur(8px);
         }
-        .contact-form input,
-        .contact-form textarea,
-        .contact-form select {
-            width: 100%;
-            padding: 0.9rem 1.2rem;
-            background: var(--glass);
-            border: 1px solid var(--border-glass);
-            border-radius: var(--radius-lg);
-            color: #fff;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            transition: 0.3s;
-            font-family: 'Inter', sans-serif;
-            backdrop-filter: blur(8px);
+        .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
+            border-color: var(--gold); outline: none; box-shadow: 0 0 40px rgba(251,191,36,0.05);
         }
-        .contact-form input:focus,
-        .contact-form textarea:focus,
-        .contact-form select:focus {
-            border-color: var(--gold);
-            outline: none;
-            box-shadow: 0 0 40px rgba(251, 191, 36, 0.05);
-        }
-        .contact-form textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
+        .contact-form textarea { min-height: 120px; resize: vertical; }
         .contact-form button {
-            background: var(--gold);
-            color: #05060a;
-            border: none;
-            padding: 0.9rem;
-            border-radius: 60px;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: 0.3s;
-            width: 100%;
-            font-family: 'Inter', sans-serif;
+            background: var(--gold); color: #05060a; border: none; padding: 0.9rem;
+            border-radius: 60px; font-weight: 700; font-size: 1rem; cursor: pointer;
+            transition: 0.3s; width: 100%; font-family: 'Inter', sans-serif;
         }
-        .contact-form button:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 50px rgba(251, 191, 36, 0.3);
-        }
+        .contact-form button:hover { transform: scale(1.02); box-shadow: 0 10px 50px rgba(251,191,36,0.3); }
 
-        .contact-info .item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            color: var(--text-muted);
-            margin-bottom: 1.2rem;
-        }
-        .contact-info .item i {
-            font-size: 1.4rem;
-            color: var(--gold);
-            width: 32px;
-            text-align: center;
-        }
-        .contact-info .item a {
-            color: #fff;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-        .contact-info .item a:hover {
-            color: var(--gold);
-        }
-        .newsletter-box {
-            display: flex;
-            gap: 0.8rem;
-            flex-wrap: wrap;
-            margin-top: 0.5rem;
-        }
-        .newsletter-box input {
-            flex: 1;
-            padding: 0.8rem 1.2rem;
-            background: var(--glass);
-            border: 1px solid var(--border-glass);
-            border-radius: 60px;
-            color: #fff;
-            min-width: 160px;
-            font-family: 'Inter', sans-serif;
-        }
-        .newsletter-box button {
-            background: var(--gold);
-            color: #05060a;
-            border: none;
-            padding: 0.8rem 2rem;
-            border-radius: 60px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: 0.3s;
-            font-family: 'Inter', sans-serif;
-        }
-        .newsletter-box button:hover {
-            transform: scale(1.05);
-        }
+        .contact-info .item { display: flex; align-items: center; gap: 1rem; color: var(--text-muted); margin-bottom: 1.2rem; }
+        .contact-info .item i { font-size: 1.4rem; color: var(--gold); width: 32px; text-align: center; }
+        .contact-info .item a { color: #fff; text-decoration: none; transition: 0.3s; }
+        .contact-info .item a:hover { color: var(--gold); }
+        .contact-info .map-placeholder { background: rgba(255,255,255,0.05); border-radius: var(--radius-lg); padding: 2rem; text-align: center; border: 1px solid var(--border-glass); margin-top: 1rem; }
+        .contact-info .map-placeholder i { font-size: 3rem; color: var(--gold); }
+        .newsletter-box { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 0.5rem; }
+        .newsletter-box input { flex: 1; padding: 0.8rem 1.2rem; background: var(--glass); border: 1px solid var(--border-glass); border-radius: 60px; color: #fff; min-width: 160px; font-family: 'Inter', sans-serif; }
+        .newsletter-box button { background: var(--gold); color: #05060a; border: none; padding: 0.8rem 2rem; border-radius: 60px; font-weight: 700; cursor: pointer; transition: 0.3s; font-family: 'Inter', sans-serif; }
+        .newsletter-box button:hover { transform: scale(1.05); }
 
-        /* ============================================================
-                   FOOTER — Holographic
-                ============================================================ */
-        .footer {
-            position: relative;
-            z-index: 1;
-            padding: 3rem 2rem 1.5rem;
-            border-top: 1px solid var(--border-glass);
-            background: rgba(5, 6, 10, 0.6);
-            backdrop-filter: blur(16px);
-        }
-        .footer-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        .footer-socials {
-            display: flex;
-            gap: 1.2rem;
-        }
-        .footer-socials a {
-            color: var(--text-muted);
-            font-size: 1.4rem;
-            transition: 0.3s;
-        }
-        .footer-socials a:hover {
-            color: var(--gold);
-            transform: scale(1.15);
-        }
-        .footer-links {
-            display: flex;
-            gap: 1.8rem;
-            flex-wrap: wrap;
-        }
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-        .footer-links a:hover {
-            color: var(--gold);
-        }
-        .footer-bottom {
-            border-top: 1px solid var(--border-glass);
-            padding-top: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-        .footer-bottom a {
-            color: var(--gold);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .footer-bottom .protected {
-            color: #4b5563;
-            font-size: 0.7rem;
-            letter-spacing: 1px;
-        }
+        /* ===== FOOTER ===== */
+        .footer { position: relative; z-index: 1; padding: 3rem 2rem 1.5rem; border-top: 1px solid var(--border-glass); background: rgba(5,6,10,0.6); backdrop-filter: blur(16px); }
+        .footer-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; margin-bottom: 2rem; }
+        .footer-socials { display: flex; gap: 1.2rem; }
+        .footer-socials a { color: var(--text-muted); font-size: 1.4rem; transition: 0.3s; }
+        .footer-socials a:hover { color: var(--gold); transform: scale(1.15); }
+        .footer-links { display: flex; gap: 1.8rem; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; transition: 0.3s; cursor: pointer; }
+        .footer-links a:hover { color: var(--gold); }
+        .footer-bottom { border-top: 1px solid var(--border-glass); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.8rem; color: var(--text-muted); }
+        .footer-bottom a { color: var(--gold); text-decoration: none; font-weight: 600; }
+        .footer-bottom .protected { color: #4b5563; font-size: 0.7rem; letter-spacing: 1px; }
 
-        /* ============================================================
-                   MODALS — Glass
-                ============================================================ */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(20px);
-            z-index: 99997;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-        }
-        .modal-overlay.open {
-            display: flex;
-        }
-        .modal-box {
-            background: #0d111a;
-            border: 1px solid var(--border-glass);
-            border-radius: var(--radius-xl);
-            max-width: 700px;
-            width: 100%;
-            max-height: 80vh;
-            overflow-y: auto;
-            padding: 2.5rem;
-            color: var(--text-muted);
-            position: relative;
-            animation: modalFade 0.5s ease;
-        }
-        @keyframes modalFade {
-            from {
-                opacity: 0;
-                transform: scale(0.9) translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
-        }
-        .modal-box h2 {
-            font-family: 'Orbitron', monospace;
-            color: #fff;
-            margin-bottom: 1.2rem;
-            font-size: 1.8rem;
-        }
-        .modal-box p,
-        .modal-box li {
-            line-height: 1.8;
-            margin-bottom: 0.8rem;
-        }
-        .modal-box ul {
-            padding-left: 1.5rem;
-        }
-        .modal-close {
-            position: sticky;
-            top: 0;
-            float: right;
-            background: none;
-            border: none;
-            color: var(--gold);
-            font-size: 2.2rem;
-            cursor: pointer;
-            transition: 0.3s;
-            z-index: 1;
-        }
-        .modal-close:hover {
-            transform: rotate(90deg);
-        }
+        /* ===== MODALS ===== */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(20px); z-index: 99997; display: none; justify-content: center; align-items: center; padding: 2rem; }
+        .modal-overlay.open { display: flex; }
+        .modal-box { background: #0d111a; border: 1px solid var(--border-glass); border-radius: var(--radius-xl); max-width: 700px; width: 100%; max-height: 80vh; overflow-y: auto; padding: 2.5rem; color: var(--text-muted); position: relative; animation: modalFade 0.5s ease; }
+        @keyframes modalFade { from{opacity:0;transform:scale(0.9) translateY(30px)} to{opacity:1;transform:scale(1) translateY(0)} }
+        .modal-box h2 { font-family: 'Orbitron', monospace; color: #fff; margin-bottom: 1.2rem; font-size: 1.8rem; }
+        .modal-box p, .modal-box li { line-height: 1.8; margin-bottom: 0.8rem; }
+        .modal-box ul { padding-left: 1.5rem; }
+        .modal-close { position: sticky; top: 0; float: right; background: none; border: none; color: var(--gold); font-size: 2.2rem; cursor: pointer; transition: 0.3s; z-index: 1; }
+        .modal-close:hover { transform: rotate(90deg); }
 
-        /* ============================================================
-                   WHATSAPP FLOAT — 3D Glow
-                ============================================================ */
+        /* ===== WHATSAPP FLOAT ===== */
         .whatsapp-float {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 999;
-            background: #25D366;
-            color: #fff;
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.6rem;
-            text-decoration: none;
-            box-shadow: 0 8px 40px rgba(37, 211, 102, 0.4);
-            transition: 0.4s;
-            animation: floatPulse 3s ease-in-out infinite;
+            position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
+            background: #25D366; color: #fff; width: 64px; height: 64px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-size: 2.6rem;
+            text-decoration: none; box-shadow: 0 8px 40px rgba(37,211,102,0.4);
+            transition: 0.4s; animation: floatPulse 3s ease-in-out infinite;
         }
-        .whatsapp-float:hover {
-            transform: scale(1.12);
-            box-shadow: 0 8px 60px rgba(37, 211, 102, 0.6);
-        }
-        @keyframes floatPulse {
-            0%,
-            100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.06);
-            }
-        }
+        .whatsapp-float:hover { transform: scale(1.12); box-shadow: 0 8px 60px rgba(37,211,102,0.6); }
+        @keyframes floatPulse { 0%,100%{transform:scale(1)}50%{transform:scale(1.06)} }
 
-        /* ============================================================
-                   SCROLL REVEAL
-                ============================================================ */
-        .reveal {
-            opacity: 0;
-            transform: translateY(50px) scale(0.96);
-            transition: opacity 1s ease, transform 1s ease;
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
+        /* ===== SCROLL REVEAL ===== */
+        .reveal { opacity: 0; transform: translateY(50px) scale(0.96); transition: opacity 1s ease, transform 1s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0) scale(1); }
 
-        /* ============================================================
-                   RESPONSIVE
-                ============================================================ */
-        @media (max-width: 1024px) {
-            .hero-content h1 {
-                font-size: 4rem;
-            }
-            .contact-wrapper {
-                grid-template-columns: 1fr;
-            }
-            .hero-stats-3d {
-                gap: 2rem;
-            }
+        /* ===== RESPONSIVE ===== */
+        @media (max-width:1024px){ .hero-content h1{font-size:4rem} .contact-wrapper{grid-template-columns:1fr} .hero-stats-3d{gap:2rem} }
+        @media (max-width:768px){
+            .navbar{padding:0.5rem 1.2rem;width:96%;top:0.8rem;border-radius:40px}
+            .nav-links{display:none;flex-direction:column;background:rgba(5,6,10,0.98);padding:1.5rem;border-radius:var(--radius-lg);position:absolute;top:100%;left:0.5rem;right:0.5rem;gap:0.6rem;border:1px solid var(--border-glass);backdrop-filter:blur(20px)}
+            .nav-links.open{display:flex}
+            .hamburger{display:flex}
+            .hero-content h1{font-size:2.8rem}
+            .hero-content .sub-title{font-size:1rem}
+            .hero-stats-3d .stat h3{font-size:1.8rem}
+            .section-header h2{font-size:2.2rem}
+            .category-grid{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+            .product-grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+            .team-grid{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+            .footer-top{flex-direction:column;align-items:flex-start}
+            .modal-box{padding:1.5rem;margin:1rem}
+            #cookie-banner{padding:0.8rem 1.5rem;border-radius:30px;bottom:1rem;gap:0.8rem}
         }
+        @media (max-width:480px){ .hero-content h1{font-size:2.2rem} .hero-stats-3d{flex-wrap:wrap;gap:1.2rem} .hero-stats-3d .stat h3{font-size:1.5rem} .btn-primary-3d,.btn-outline-3d{padding:0.7rem 1.8rem;font-size:0.9rem} }
 
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 0.5rem 1.2rem;
-                width: 96%;
-                top: 0.8rem;
-                border-radius: 40px;
-            }
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                background: rgba(5, 6, 10, 0.98);
-                padding: 1.5rem;
-                border-radius: var(--radius-lg);
-                position: absolute;
-                top: 100%;
-                left: 0.5rem;
-                right: 0.5rem;
-                gap: 0.6rem;
-                border: 1px solid var(--border-glass);
-                backdrop-filter: blur(20px);
-            }
-            .nav-links.open {
-                display: flex;
-            }
-            .hamburger {
-                display: flex;
-            }
-            .hero-content h1 {
-                font-size: 2.8rem;
-            }
-            .hero-content .sub-title {
-                font-size: 1rem;
-            }
-            .hero-stats-3d .stat h3 {
-                font-size: 1.8rem;
-            }
-            .section-header h2 {
-                font-size: 2.2rem;
-            }
-            .category-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            }
-            .product-grid {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            }
-            .team-grid {
-                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            }
-            .footer-top {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .modal-box {
-                padding: 1.5rem;
-                margin: 1rem;
-            }
-            #cookie-banner {
-                padding: 0.8rem 1.5rem;
-                border-radius: 30px;
-                bottom: 1rem;
-                gap: 0.8rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
-            .hero-stats-3d {
-                flex-wrap: wrap;
-                gap: 1.2rem;
-            }
-            .hero-stats-3d .stat h3 {
-                font-size: 1.5rem;
-            }
-            .btn-primary-3d,
-            .btn-outline-3d {
-                padding: 0.7rem 1.8rem;
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Scrollbar */
-        ::-webkit-scrollbar {
-            width: 5px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg-deep);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--gold);
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #f59e0b;
-        }
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: var(--bg-deep); }
+        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #f59e0b; }
     </style>
 </head>
 <body>
@@ -1147,7 +417,7 @@
 
     <!-- ===== COOKIE BANNER ===== -->
     <div id="cookie-banner">
-        <p>🍪 <span style="color:#fff;">Hyper‑Reality Cookies</span> — by using this portal you agree to our <a onclick="openModal('privacy')">Privacy Protocol</a>.</p>
+        <p>🍪 <span style="color:#fff;">Hyper‑Reality Cookies</span> — by using this portal you agree to our <a onclick="openModal('privacy')">Privacy Protocol</a> &amp; <a onclick="openModal('cookie')">Cookie Policy</a>.</p>
         <button class="btn-cookie" onclick="acceptCookies()">⚡ Accept</button>
     </div>
 
@@ -1160,13 +430,17 @@
             <span class="icon-3d"><i class="fas fa-sun"></i></span>
             <div class="brand-text">
                 RANA<span>SOLAR</span>
-                <span class="sub-tag">3D · Holographic</span>
+                <span class="sub-tag">REPAIRING LAB · KASUR</span>
             </div>
         </a>
         <ul class="nav-links" id="navLinks">
             <li><a onclick="navigateTo('home')" class="active">Home</a></li>
+            <li><a onclick="navigateTo('about')">About</a></li>
             <li><a onclick="navigateTo('services')">Services</a></li>
             <li><a onclick="navigateTo('products')">Products</a></li>
+            <li><a onclick="navigateTo('testimonials')">Testimonials</a></li>
+            <li><a onclick="navigateTo('blog')">Blog</a></li>
+            <li><a onclick="navigateTo('faq')">FAQ</a></li>
             <li><a onclick="navigateTo('team')">Team</a></li>
             <li><a onclick="navigateTo('contact')" class="btn-cta"><i class="fas fa-bolt"></i> Contact</a></li>
         </ul>
@@ -1175,20 +449,39 @@
         </button>
     </nav>
 
-    <!-- ===== HERO ===== -->
+    <!-- ===== HERO (Clean - No Video Background) ===== -->
     <section class="hero" id="section-home">
         <div class="hero-content">
             <div class="glow-badge"><i class="fas fa-rotate"></i> NRE Claim Center · Kasur</div>
-            <h1>Solar <br />Hyper‑Reality</h1>
-            <p class="sub-title">Immersive 3D solar service experience. Inverter repair, NRE claims, and premium products — powered by next‑gen technology.</p>
+            <h1>Solar <br />Repair &amp; Service</h1>
+            <p class="sub-title">RANA SOLAR REPAIRING LAB — Expert inverter repair, NRE claims, and premium solar products in Kasur. 10+ years of trusted service.</p>
             <div class="hero-buttons">
                 <a href="https://wa.me/923000041131" target="_blank" class="btn-primary-3d"><i class="fab fa-whatsapp"></i> Connect Now</a>
-                <a href="#section-services" class="btn-outline-3d"><i class="fas fa-chevron-circle-right"></i> Explore</a>
+                <a href="#section-products" class="btn-outline-3d"><i class="fas fa-chevron-circle-right"></i> View Products</a>
             </div>
             <div class="hero-stats-3d">
                 <div class="stat"><h3>10+</h3><p>Years Experience</p></div>
                 <div class="stat"><h3>500+</h3><p>Repairs</p></div>
                 <div class="stat"><h3>4.9★</h3><p>Rating</p></div>
+                <div class="stat"><h3>100%</h3><p>Satisfaction</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="section" id="section-about">
+        <div class="section-header reveal">
+            <div class="tag"><i class="fas fa-info-circle"></i> ABOUT US</div>
+            <h2>Who We <span>Are</span></h2>
+            <p>RANA SOLAR REPAIRING LAB — Your trusted solar partner in Kasur.</p>
+        </div>
+        <div class="glass-card reveal" style="max-width:900px;margin:0 auto;text-align:center;padding:3rem;">
+            <p style="color:var(--text-muted);font-size:1.1rem;line-height:1.8;">RANA SOLAR REPAIRING LAB is a premier solar service center based in Kasur, Pakistan. With over 10 years of experience, we specialize in inverter repair, NRE claim processing, and supply of high-quality solar components. Our mission is to make solar energy accessible, affordable, and reliable for everyone.</p>
+            <div style="display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border-glass);">
+                <div><i class="fas fa-check-circle" style="color:var(--gold);font-size:1.5rem;"></i> <span style="color:#fff;">15+ Years Experience</span></div>
+                <div><i class="fas fa-check-circle" style="color:var(--gold);font-size:1.5rem;"></i> <span style="color:#fff;">500+ Happy Clients</span></div>
+                <div><i class="fas fa-check-circle" style="color:var(--gold);font-size:1.5rem;"></i> <span style="color:#fff;">Authorized NRE Center</span></div>
+                <div><i class="fas fa-check-circle" style="color:var(--gold);font-size:1.5rem;"></i> <span style="color:#fff;">Original Parts</span></div>
             </div>
         </div>
     </section>
@@ -1196,9 +489,9 @@
     <!-- ===== SERVICES ===== -->
     <section class="section" id="section-services">
         <div class="section-header reveal">
-            <div class="tag"><i class="fas fa-cube"></i> DIMENSIONS</div>
+            <div class="tag"><i class="fas fa-cube"></i> SERVICES</div>
             <h2>Our <span>Services</span></h2>
-            <p>Holographic‑grade solar solutions — from repairs to NRE claims.</p>
+            <p>Professional solar solutions — from repairs to NRE claims.</p>
         </div>
         <div class="category-grid">
             <div class="glass-card reveal"><div class="icon"><i class="fas fa-microchip"></i></div><h3>Inverter Repair</h3><p>All boards &amp; MPPTs</p><span class="badge">Expert</span></div>
@@ -1210,60 +503,405 @@
         </div>
     </section>
 
-    <!-- ===== PRODUCTS ===== -->
+    <!-- ===== PRODUCTS (Updated with Real Products from Screenshots) ===== -->
     <section class="section" id="section-products">
         <div class="section-header reveal">
-            <div class="tag"><i class="fas fa-rotate-3d"></i> 3D COLLECTION</div>
-            <h2>New <span>Arrivals</span></h2>
-            <p>Flip to inquire or share — every product is a portal.</p>
+            <div class="tag"><i class="fas fa-rotate-3d"></i> INVENTORY</div>
+            <h2>Our <span>Products</span></h2>
+            <p>Genuine solar parts and inverters — all available in stock.</p>
         </div>
         <div class="product-grid">
-            <div class="flip-card reveal"><div class="flip-card-inner">
-                    <div class="flip-card-front"><div class="p-icon"><i class="fas fa-sun"></i></div><h4>INVEREX VEYRONII</h4><div class="p-desc">6000W · 48V</div><div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> 4.8</div></div>
-                    <div class="flip-card-back"><p style="color:#fff;font-weight:600;">⚡ Inquire Now</p><div class="share-btns"><a href="https://wa.me/923000041131?text=INVEREX%20VEYRONII" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com" target="_blank"><i class="fab fa-facebook"></i> Share</a><a href="https://twitter.com/intent/tweet?text=INVEREX%20VEYRONII%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-twitter"></i> Tweet</a></div></div>
-            </div></div>
-            <div class="flip-card reveal"><div class="flip-card-inner">
-                    <div class="flip-card-front"><div class="p-icon"><i class="fas fa-sun"></i></div><h4>Fronus Inverter</h4><div class="p-desc">High‑efficiency</div><div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5.0</div></div>
-                    <div class="flip-card-back"><p style="color:#fff;font-weight:600;">⚡ Inquire Now</p><div class="share-btns"><a href="https://wa.me/923000041131?text=Fronus%20Inverter" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com" target="_blank"><i class="fab fa-facebook"></i> Share</a><a href="https://twitter.com/intent/tweet?text=Fronus%20Inverter%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-twitter"></i> Tweet</a></div></div>
-            </div></div>
-            <div class="flip-card reveal"><div class="flip-card-inner">
-                    <div class="flip-card-front"><div class="p-icon"><i class="fas fa-microchip"></i></div><h4>New Main Board</h4><div class="p-desc">Original replacement</div><div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5.0</div></div>
-                    <div class="flip-card-back"><p style="color:#fff;font-weight:600;">⚡ Inquire Now</p><div class="share-btns"><a href="https://wa.me/923000041131?text=New%20Main%20Board" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com" target="_blank"><i class="fab fa-facebook"></i> Share</a><a href="https://twitter.com/intent/tweet?text=New%20Main%20Board%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-twitter"></i> Tweet</a></div></div>
-            </div></div>
-            <div class="flip-card reveal"><div class="flip-card-inner">
-                    <div class="flip-card-front"><div class="p-icon"><i class="fas fa-bolt"></i></div><h4>Chopper / Coil</h4><div class="p-desc">Premium quality</div><div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4.9</div></div>
-                    <div class="flip-card-back"><p style="color:#fff;font-weight:600;">⚡ Inquire Now</p><div class="share-btns"><a href="https://wa.me/923000041131?text=Chopper%20Coil" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com" target="_blank"><i class="fab fa-facebook"></i> Share</a><a href="https://twitter.com/intent/tweet?text=Chopper%20Coil%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-twitter"></i> Tweet</a></div></div>
-            </div></div>
-            <div class="flip-card reveal"><div class="flip-card-inner">
-                    <div class="flip-card-front"><div class="p-icon"><i class="fas fa-fan"></i></div><h4>Cooling Fan</h4><div class="p-desc">Original high‑speed</div><div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5.0</div></div>
-                    <div class="flip-card-back"><p style="color:#fff;font-weight:600;">⚡ Inquire Now</p><div class="share-btns"><a href="https://wa.me/923000041131?text=Cooling%20Fan" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com" target="_blank"><i class="fab fa-facebook"></i> Share</a><a href="https://twitter.com/intent/tweet?text=Cooling%20Fan%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-twitter"></i> Tweet</a></div></div>
-            </div></div>
-            <div class="flip-card reveal"><div class="flip-card-inner">
-                    <div class="flip-card-front"><div class="p-icon"><i class="fas fa-tv"></i></div><h4>Display Panel</h4><div class="p-desc">LCD / LED</div><div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4.8</div></div>
-                    <div class="flip-card-back"><p style="color:#fff;font-weight:600;">⚡ Inquire Now</p><div class="share-btns"><a href="https://wa.me/923000041131?text=Display%20Panel" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com" target="_blank"><i class="fab fa-facebook"></i> Share</a><a href="https://twitter.com/intent/tweet?text=Display%20Panel%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-twitter"></i> Tweet</a></div></div>
-            </div></div>
+
+            <!-- 1. INVEREX VEYRONII -->
+            <div class="product-card reveal">
+                <img src="https://placehold.co/120x120/0b1120/fbbf24?text=INVEREX" alt="INVEREX VEYRONII" class="product-img">
+                <h4>INVEREX VEYRONII</h4>
+                <div class="p-desc">6000W · 48V · New Solar Inverter</div>
+                <div class="p-price">PKR 45,000</div>
+                <div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> 4.8</div>
+                <span class="p-badge">In Stock</span>
+                <div class="share-btns">
+                    <a href="https://wa.me/923000041131?text=INVEREX%20VEYRONII%20-%20RANA%20SOLAR" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order</a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com&quote=INVEREX%20VEYRONII%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-facebook"></i> Share</a>
+                    <a href="https://twitter.com/intent/tweet?text=INVEREX%20VEYRONII%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-twitter"></i> Tweet</a>
+                </div>
+            </div>
+
+            <!-- 2. Fronus Inverter -->
+            <div class="product-card reveal">
+                <img src="https://placehold.co/120x120/0b1120/fbbf24?text=Fronus" alt="Fronus Inverter" class="product-img">
+                <h4>Fronus Inverter</h4>
+                <div class="p-desc">New Solar Inverter · High Efficiency</div>
+                <div class="p-price">PKR 55,000</div>
+                <div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5.0</div>
+                <span class="p-badge">In Stock</span>
+                <div class="share-btns">
+                    <a href="https://wa.me/923000041131?text=Fronus%20Inverter%20-%20RANA%20SOLAR" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order</a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com&quote=Fronus%20Inverter%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-facebook"></i> Share</a>
+                    <a href="https://twitter.com/intent/tweet?text=Fronus%20Inverter%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-twitter"></i> Tweet</a>
+                </div>
+            </div>
+
+            <!-- 3. SUNLIFE Inverter -->
+            <div class="product-card reveal">
+                <img src="https://placehold.co/120x120/0b1120/fbbf24?text=SUNLIFE" alt="SUNLIFE Inverter" class="product-img">
+                <h4>SUNLIFE Inverter</h4>
+                <div class="p-desc">New Solar Inverter · سولفیرز</div>
+                <div class="p-price">PKR 50,000</div>
+                <div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5.0</div>
+                <span class="p-badge">In Stock</span>
+                <div class="share-btns">
+                    <a href="https://wa.me/923000041131?text=SUNLIFE%20Inverter%20-%20RANA%20SOLAR" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order</a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com&quote=SUNLIFE%20Inverter%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-facebook"></i> Share</a>
+                    <a href="https://twitter.com/intent/tweet?text=SUNLIFE%20Inverter%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-twitter"></i> Tweet</a>
+                </div>
+            </div>
+
+            <!-- 4. New Main Board -->
+            <div class="product-card reveal">
+                <img src="https://placehold.co/120x120/0b1120/fbbf24?text=Main+Board" alt="Main Board" class="product-img">
+                <h4>New Main Board</h4>
+                <div class="p-desc">Original replacement board</div>
+                <div class="p-price">PKR 8,500</div>
+                <div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5.0</div>
+                <span class="p-badge">Original</span>
+                <div class="share-btns">
+                    <a href="https://wa.me/923000041131?text=New%20Main%20Board%20-%20RANA%20SOLAR" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order</a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com&quote=New%20Main%20Board%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-facebook"></i> Share</a>
+                    <a href="https://twitter.com/intent/tweet?text=New%20Main%20Board%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-twitter"></i> Tweet</a>
+                </div>
+            </div>
+
+            <!-- 5. New System Card -->
+            <div class="product-card reveal">
+                <img src="https://placehold.co/120x120/0b1120/fbbf24?text=System+Card" alt="System Card" class="product-img">
+                <h4>New System Card</h4>
+                <div class="p-desc">Original system control card</div>
+                <div class="p-price">PKR 6,200</div>
+                <div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5.0</div>
+                <span class="p-badge">Original</span>
+                <div class="share-btns">
+                    <a href="https://wa.me/923000041131?text=New%20System%20Card%20-%20RANA%20SOLAR" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order</a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com&quote=New%20System%20Card%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-facebook"></i> Share</a>
+                    <a href="https://twitter.com/intent/tweet?text=New%20System%20Card%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-twitter"></i> Tweet</a>
+                </div>
+            </div>
+
+            <!-- 6. New Solar MPPT -->
+            <div class="product-card reveal">
+                <img src="https://placehold.co/120x120/0b1120/fbbf24?text=MPPT" alt="Solar MPPT" class="product-img">
+                <h4>New Solar MPPT</h4>
+                <div class="p-desc">Maximum Power Point Tracker</div>
+                <div class="p-price">PKR 4,500</div>
+                <div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5.0</div>
+                <span class="p-badge">Original</span>
+                <div class="share-btns">
+                    <a href="https://wa.me/923000041131?text=New%20Solar%20MPPT%20-%20RANA%20SOLAR" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order</a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com&quote=New%20Solar%20MPPT%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-facebook"></i> Share</a>
+                    <a href="https://twitter.com/intent/tweet?text=New%20Solar%20MPPT%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-twitter"></i> Tweet</a>
+                </div>
+            </div>
+
+            <!-- 7. New Display -->
+            <div class="product-card reveal">
+                <img src="https://placehold.co/120x120/0b1120/fbbf24?text=Display" alt="Display" class="product-img">
+                <h4>New Display Panel</h4>
+                <div class="p-desc">LCD / LED display for inverters</div>
+                <div class="p-price">PKR 6,500</div>
+                <div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4.8</div>
+                <span class="p-badge">Available</span>
+                <div class="share-btns">
+                    <a href="https://wa.me/923000041131?text=New%20Display%20Panel%20-%20RANA%20SOLAR" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order</a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com&quote=New%20Display%20Panel%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-facebook"></i> Share</a>
+                    <a href="https://twitter.com/intent/tweet?text=New%20Display%20Panel%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-twitter"></i> Tweet</a>
+                </div>
+            </div>
+
+            <!-- 8. New Chopper -->
+            <div class="product-card reveal">
+                <img src="https://placehold.co/120x120/0b1120/fbbf24?text=Chopper" alt="Chopper" class="product-img">
+                <h4>New Chopper</h4>
+                <div class="p-desc">Premium quality chopper coil</div>
+                <div class="p-price">PKR 3,200</div>
+                <div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4.9</div>
+                <span class="p-badge">In Stock</span>
+                <div class="share-btns">
+                    <a href="https://wa.me/923000041131?text=New%20Chopper%20-%20RANA%20SOLAR" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order</a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com&quote=New%20Chopper%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-facebook"></i> Share</a>
+                    <a href="https://twitter.com/intent/tweet?text=New%20Chopper%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-twitter"></i> Tweet</a>
+                </div>
+            </div>
+
+            <!-- 9. New Coil -->
+            <div class="product-card reveal">
+                <img src="https://placehold.co/120x120/0b1120/fbbf24?text=Coil" alt="Coil" class="product-img">
+                <h4>New Coil</h4>
+                <div class="p-desc">Original replacement coil</div>
+                <div class="p-price">PKR 2,800</div>
+                <div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5.0</div>
+                <span class="p-badge">Original</span>
+                <div class="share-btns">
+                    <a href="https://wa.me/923000041131?text=New%20Coil%20-%20RANA%20SOLAR" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order</a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com&quote=New%20Coil%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-facebook"></i> Share</a>
+                    <a href="https://twitter.com/intent/tweet?text=New%20Coil%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-twitter"></i> Tweet</a>
+                </div>
+            </div>
+
+            <!-- 10. New Fan -->
+            <div class="product-card reveal">
+                <img src="https://placehold.co/120x120/0b1120/fbbf24?text=Fan" alt="Fan" class="product-img">
+                <h4>New Cooling Fan</h4>
+                <div class="p-desc">Original high‑speed fan</div>
+                <div class="p-price">PKR 2,500</div>
+                <div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5.0</div>
+                <span class="p-badge">Original</span>
+                <div class="share-btns">
+                    <a href="https://wa.me/923000041131?text=New%20Cooling%20Fan%20-%20RANA%20SOLAR" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order</a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com&quote=New%20Cooling%20Fan%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-facebook"></i> Share</a>
+                    <a href="https://twitter.com/intent/tweet?text=New%20Cooling%20Fan%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-twitter"></i> Tweet</a>
+                </div>
+            </div>
+
+            <!-- 11. New Capacitor -->
+            <div class="product-card reveal">
+                <img src="https://placehold.co/120x120/0b1120/fbbf24?text=Capacitor" alt="Capacitor" class="product-img">
+                <h4>New Capacitor</h4>
+                <div class="p-desc">Original high-quality capacitor</div>
+                <div class="p-price">PKR 1,200</div>
+                <div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5.0</div>
+                <span class="p-badge">Original</span>
+                <div class="share-btns">
+                    <a href="https://wa.me/923000041131?text=New%20Capacitor%20-%20RANA%20SOLAR" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order</a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com&quote=New%20Capacitor%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-facebook"></i> Share</a>
+                    <a href="https://twitter.com/intent/tweet?text=New%20Capacitor%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-twitter"></i> Tweet</a>
+                </div>
+            </div>
+
+            <!-- 12. New Solar Panel -->
+            <div class="product-card reveal">
+                <img src="https://placehold.co/120x120/0b1120/fbbf24?text=Solar+Panel" alt="Solar Panel" class="product-img">
+                <h4>New Solar Panel</h4>
+                <div class="p-desc">High‑efficiency solar panel</div>
+                <div class="p-price">PKR 25,000</div>
+                <div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4.9</div>
+                <span class="p-badge">Premium</span>
+                <div class="share-btns">
+                    <a href="https://wa.me/923000041131?text=New%20Solar%20Panel%20-%20RANA%20SOLAR" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order</a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com&quote=New%20Solar%20Panel%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-facebook"></i> Share</a>
+                    <a href="https://twitter.com/intent/tweet?text=New%20Solar%20Panel%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-twitter"></i> Tweet</a>
+                </div>
+            </div>
+
+            <!-- 13. New Original IGBT -->
+            <div class="product-card reveal">
+                <img src="https://placehold.co/120x120/0b1120/fbbf24?text=IGBT" alt="IGBT" class="product-img">
+                <h4>New Original IGBT</h4>
+                <div class="p-desc">75N65KDF · 100N25F</div>
+                <div class="p-price">PKR 1,800</div>
+                <div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5.0</div>
+                <span class="p-badge">Original</span>
+                <div class="share-btns">
+                    <a href="https://wa.me/923000041131?text=New%20Original%20IGBT%20-%20RANA%20SOLAR" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order</a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com&quote=New%20Original%20IGBT%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-facebook"></i> Share</a>
+                    <a href="https://twitter.com/intent/tweet?text=New%20Original%20IGBT%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-twitter"></i> Tweet</a>
+                </div>
+            </div>
+
+            <!-- 14. New Original Optocoupler -->
+            <div class="product-card reveal">
+                <img src="https://placehold.co/120x120/0b1120/fbbf24?text=Optocoupler" alt="Optocoupler" class="product-img">
+                <h4>New Original Optocoupler</h4>
+                <div class="p-desc">TLP350 · Original</div>
+                <div class="p-price">PKR 950</div>
+                <div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5.0</div>
+                <span class="p-badge">Original</span>
+                <div class="share-btns">
+                    <a href="https://wa.me/923000041131?text=New%20Original%20Optocoupler%20-%20RANA%20SOLAR" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order</a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com&quote=New%20Original%20Optocoupler%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-facebook"></i> Share</a>
+                    <a href="https://twitter.com/intent/tweet?text=New%20Original%20Optocoupler%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-twitter"></i> Tweet</a>
+                </div>
+            </div>
+
+            <!-- 15. Repair Service -->
+            <div class="product-card reveal">
+                <img src="https://placehold.co/120x120/0b1120/fbbf24?text=Repair" alt="Repair Service" class="product-img">
+                <h4>Inverter Repair Service</h4>
+                <div class="p-desc">All type of solar inverter boards &amp; MPPTs</div>
+                <div class="p-price">PKR 1,500+</div>
+                <div class="p-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4.9</div>
+                <span class="p-badge">Expert</span>
+                <div class="share-btns">
+                    <a href="https://wa.me/923000041131?text=Inverter%20Repair%20Service%20-%20RANA%20SOLAR" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Book</a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://ranasolar.com&quote=Inverter%20Repair%20Service%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-facebook"></i> Share</a>
+                    <a href="https://twitter.com/intent/tweet?text=Inverter%20Repair%20Service%20at%20RANA%20SOLAR" target="_blank"><i class="fab fa-twitter"></i> Tweet</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="section" id="section-testimonials">
+        <div class="section-header reveal">
+            <div class="tag"><i class="fas fa-star"></i> FEEDBACK</div>
+            <h2>What Our <span>Clients Say</span></h2>
+            <p>Real reviews from real customers.</p>
+        </div>
+        <div class="testimonial-grid">
+            <div class="glass-card reveal">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="quote">"Best solar repair service in Kasur. They fixed my inverter in 2 hours! Professional and reliable."</p>
+                <div class="client">— Ahmed Ali</div>
+                <div class="client-role">Homeowner</div>
+            </div>
+            <div class="glass-card reveal">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="quote">"Professional team, genuine parts. Highly recommend for NRE claims. They handled everything smoothly."</p>
+                <div class="client">— Sana Khan</div>
+                <div class="client-role">Business Owner</div>
+            </div>
+            <div class="glass-card reveal">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="quote">"Excellent support and fast service. They have all the components I needed. 5 stars!"</p>
+                <div class="client">— Rizwan Bhatti</div>
+                <div class="client-role">Solar User</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BLOG ===== -->
+    <section class="section" id="section-blog">
+        <div class="section-header reveal">
+            <div class="tag"><i class="fas fa-newspaper"></i> UPDATES</div>
+            <h2>Latest <span>Blog</span></h2>
+            <p>Stay updated with solar news and tips.</p>
+        </div>
+        <div class="blog-grid">
+            <div class="glass-card reveal">
+                <img src="https://placehold.co/600x400/0b1120/fbbf24?text=Solar+Tips" alt="Solar Tips" class="blog-img">
+                <div class="blog-body">
+                    <h4>5 Tips for Solar Maintenance</h4>
+                    <p>Keep your system running efficiently with these simple steps.</p>
+                    <a href="#">Read More →</a>
+                </div>
+            </div>
+            <div class="glass-card reveal">
+                <img src="https://placehold.co/600x400/0b1120/fbbf24?text=NRE+Claim" alt="NRE Claim" class="blog-img">
+                <div class="blog-body">
+                    <h4>NRE Claim Process Simplified</h4>
+                    <p>Everything you need to know about net metering claims.</p>
+                    <a href="#">Read More →</a>
+                </div>
+            </div>
+            <div class="glass-card reveal">
+                <img src="https://placehold.co/600x400/0b1120/fbbf24?text=Inverter+Guide" alt="Inverter Guide" class="blog-img">
+                <div class="blog-body">
+                    <h4>Choosing the Right Inverter</h4>
+                    <p>Compare features, efficiency, and top brands.</p>
+                    <a href="#">Read More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section" id="section-faq">
+        <div class="section-header reveal">
+            <div class="tag"><i class="fas fa-question-circle"></i> HELP CENTER</div>
+            <h2>Frequently Asked <span>Questions</span></h2>
+            <p>Quick answers to common questions.</p>
+        </div>
+        <div class="faq-grid">
+            <div class="faq-item reveal">
+                <button class="faq-question" onclick="toggleFaq(this)">What is NRE claim? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">Net metering credit claim process for solar energy producers. We handle all documentation and submission.</div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question" onclick="toggleFaq(this)">Do you offer warranty on repairs? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">Yes, all repairs come with a 3-month warranty on parts and labor. We stand behind our work.</div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question" onclick="toggleFaq(this)">What brands do you support? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">We work with INVEREX, Fronus, Huawei, SUNLIFE, and all major solar brands. We stock original parts for all.</div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question" onclick="toggleFaq(this)">How can I schedule a service? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">Simply contact us via phone at 0300-0041131, WhatsApp, or fill out the contact form. We'll respond within 2 hours.</div>
+            </div>
         </div>
     </section>
 
     <!-- ===== TEAM ===== -->
     <section class="section" id="section-team">
         <div class="section-header reveal">
-            <div class="tag"><i class="fas fa-users"></i> HOLO‑TEAM</div>
-            <h2>Our <span>Team</span></h2>
-            <p>The minds behind the solar revolution.</p>
+            <div class="tag"><i class="fas fa-users"></i> OUR TEAM</div>
+            <h2>Meet Our <span>Team</span></h2>
+            <p>The experts behind RANA SOLAR REPAIRING LAB.</p>
         </div>
         <div class="team-grid">
-            <div class="glass-card reveal"><div class="avatar"><i class="fas fa-user-tie"></i></div><h4>Rana Muhammad</h4><div class="role">Founder · Lead Engineer</div><div class="desc">15+ years in inverter repair &amp; NRE claims.</div><div class="team-socials"><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-tiktok"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a><a href="#"><i class="fab fa-linkedin"></i></a></div></div>
-            <div class="glass-card reveal"><div class="avatar"><i class="fas fa-user-cog"></i></div><h4>Ali Raza</h4><div class="role">Senior Technician</div><div class="desc">Specialist in MPPT boards &amp; system cards.</div><div class="team-socials"><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-tiktok"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a><a href="#"><i class="fab fa-linkedin"></i></a></div></div>
-            <div class="glass-card reveal"><div class="avatar"><i class="fas fa-user-astronaut"></i></div><h4>Usman Ghani</h4><div class="role">Component Specialist</div><div class="desc">IGBT, MOSFET, Optocoupler &amp; coils.</div><div class="team-socials"><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-tiktok"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a><a href="#"><i class="fab fa-linkedin"></i></a></div></div>
-            <div class="glass-card reveal"><div class="avatar"><i class="fas fa-user-headset"></i></div><h4>Imran Ashraf</h4><div class="role">Customer Support</div><div class="desc">Your point of contact for claims &amp; inquiries.</div><div class="team-socials"><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-tiktok"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a><a href="#"><i class="fab fa-linkedin"></i></a></div></div>
+            <div class="glass-card reveal">
+                <div class="avatar"><i class="fas fa-user-tie"></i></div>
+                <h4>Rana Muhammad</h4>
+                <div class="role">Founder · Lead Engineer</div>
+                <div class="desc">15+ years in inverter repair &amp; NRE claims.</div>
+                <div class="team-socials">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="glass-card reveal">
+                <div class="avatar"><i class="fas fa-user-cog"></i></div>
+                <h4>Ali Raza</h4>
+                <div class="role">Senior Technician</div>
+                <div class="desc">Specialist in MPPT boards &amp; system cards.</div>
+                <div class="team-socials">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="glass-card reveal">
+                <div class="avatar"><i class="fas fa-user-astronaut"></i></div>
+                <h4>Usman Ghani</h4>
+                <div class="role">Component Specialist</div>
+                <div class="desc">IGBT, MOSFET, Optocoupler &amp; coils.</div>
+                <div class="team-socials">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="glass-card reveal">
+                <div class="avatar"><i class="fas fa-user-headset"></i></div>
+                <h4>Imran Ashraf</h4>
+                <div class="role">Customer Support</div>
+                <div class="desc">Your point of contact for claims &amp; inquiries.</div>
+                <div class="team-socials">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- ===== CONTACT ===== -->
     <section class="section" id="section-contact">
         <div class="section-header reveal">
-            <div class="tag"><i class="fas fa-paper-plane"></i> HYPER‑LINK</div>
+            <div class="tag"><i class="fas fa-paper-plane"></i> CONTACT</div>
             <h2>Get in <span>Touch</span></h2>
             <p>Send a message — we'll respond in light‑speed.</p>
         </div>
@@ -1271,17 +909,37 @@
             <form class="contact-form" onsubmit="handleContact(event)">
                 <input type="text" placeholder="Your Name" required />
                 <input type="email" placeholder="Your Email" required />
-                <select required><option value="">Select Service</option><option>Inverter Repair</option><option>New Inverter</option><option>MPPT / Board</option><option>Components</option><option>NRE Claim</option><option>Solar Panel</option><option>Other</option></select>
+                <select required>
+                    <option value="">Select Service</option>
+                    <option>Inverter Repair</option>
+                    <option>New Inverter</option>
+                    <option>MPPT / Board</option>
+                    <option>Components</option>
+                    <option>NRE Claim</option>
+                    <option>Solar Panel</option>
+                    <option>Other</option>
+                </select>
                 <textarea placeholder="Your Message..." required></textarea>
                 <button type="submit"><i class="fas fa-bolt"></i> Send Message</button>
             </form>
             <div class="contact-info">
                 <div class="item"><i class="fas fa-phone"></i> <a href="tel:03000041131">0300-0041131</a></div>
                 <div class="item"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/923000041131" target="_blank">0300-0041131</a></div>
-                <div class="item"><i class="fas fa-map-marker-alt"></i> Rana Solar Lab, Kasur</div>
+                <div class="item"><i class="fas fa-phone"></i> <a href="tel:03004567102">0300-4567102</a></div>
+                <div class="item"><i class="fas fa-map-marker-alt"></i> Rana Solar Repairing Lab, Kasur</div>
                 <div class="item"><i class="fas fa-clock"></i> Mon–Sat: 9AM – 8PM</div>
                 <div class="item"><i class="fas fa-badge-check"></i> NRE Claim Center</div>
-                <div style="margin-top:1.5rem;"><label style="font-weight:600;color:#fff;display:block;margin-bottom:0.5rem;">📡 Subscribe to Quantum Updates</label><div class="newsletter-box"><input type="email" placeholder="Enter email" id="newsletterEmail" /><button onclick="subscribeNewsletter()"><i class="fas fa-paper-plane"></i> Subscribe</button></div></div>
+                <div class="map-placeholder">
+                    <i class="fas fa-map"></i>
+                    <p class="text-muted mt-2">📍 Find us on Google Maps</p>
+                </div>
+                <div style="margin-top:1.5rem;">
+                    <label style="font-weight:600;color:#fff;display:block;margin-bottom:0.5rem;">📡 Subscribe to Updates</label>
+                    <div class="newsletter-box">
+                        <input type="email" placeholder="Enter email" id="newsletterEmail" />
+                        <button onclick="subscribeNewsletter()"><i class="fas fa-paper-plane"></i> Subscribe</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1289,12 +947,31 @@
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="footer-top">
-            <div class="logo-3d" style="gap:0.5rem;"><span class="icon-3d"><i class="fas fa-sun"></i></span><div class="brand-text" style="font-size:1rem;">RANA<span>SOLAR</span><span class="sub-tag" style="font-size:0.5rem;">3D PORTAL</span></div></div>
-            <div class="footer-socials"><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-linkedin"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-tiktok"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div>
+            <div class="logo-3d" style="gap:0.5rem;">
+                <span class="icon-3d"><i class="fas fa-sun"></i></span>
+                <div class="brand-text" style="font-size:1rem;">
+                    RANA<span>SOLAR</span>
+                    <span class="sub-tag" style="font-size:0.5rem;">REPAIRING LAB · KASUR</span>
+                </div>
+            </div>
+            <div class="footer-socials">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
         </div>
-        <div class="footer-links"><a onclick="openModal('privacy')">Privacy Protocol</a><a onclick="openModal('terms')">Terms of Service</a><a onclick="openModal('cookie')">Cookie Policy</a><a onclick="openModal('disclaimer')">Disclaimer</a></div>
+        <div class="footer-links">
+            <a onclick="openModal('privacy')">Privacy Policy</a>
+            <a onclick="openModal('terms')">Terms of Service</a>
+            <a onclick="openModal('cookie')">Cookie Policy</a>
+            <a onclick="openModal('disclaimer')">Disclaimer</a>
+        </div>
         <div class="footer-bottom">
-            <div>&copy; <span id="year"></span> RANA SOLAR TRADERS — All rights reserved.</div>
+            <div>&copy; <span id="year"></span> RANA SOLAR REPAIRING LAB — All rights reserved.</div>
             <div>Powered by <a href="https://nexussolution603.github.io/in/" target="_blank">NEXUS SOLUTION</a></div>
             <div class="protected"><i class="fas fa-lock"></i> Protected · 3D Experience</div>
         </div>
@@ -1304,10 +981,10 @@
     <a href="https://wa.me/923000041131" target="_blank" class="whatsapp-float" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
     <!-- ===== LEGAL MODALS ===== -->
-    <div class="modal-overlay" id="modal-privacy"><div class="modal-box"><button class="modal-close" onclick="closeModal('privacy')">&times;</button><h2>Privacy Protocol</h2><p>Your data is encrypted and used solely for service delivery. We never share without consent.</p></div></div>
-    <div class="modal-overlay" id="modal-terms"><div class="modal-box"><button class="modal-close" onclick="closeModal('terms')">&times;</button><h2>Terms of Service</h2><p>By using this portal you agree to our terms. All services are performed with professional care.</p></div></div>
-    <div class="modal-overlay" id="modal-cookie"><div class="modal-box"><button class="modal-close" onclick="closeModal('cookie')">&times;</button><h2>Cookie Policy</h2><p>We use cookies to enhance your 3D experience and analyze traffic.</p></div></div>
-    <div class="modal-overlay" id="modal-disclaimer"><div class="modal-box"><button class="modal-close" onclick="closeModal('disclaimer')">&times;</button><h2>Disclaimer</h2><p>Information is provided "as is". RANA SOLAR is not liable for any damages.</p></div></div>
+    <div class="modal-overlay" id="modal-privacy"><div class="modal-box"><button class="modal-close" onclick="closeModal('privacy')">&times;</button><h2>Privacy Policy</h2><p>Your data is encrypted and used solely for service delivery. We never share without consent. All data is stored securely.</p></div></div>
+    <div class="modal-overlay" id="modal-terms"><div class="modal-box"><button class="modal-close" onclick="closeModal('terms')">&times;</button><h2>Terms of Service</h2><p>By using this portal you agree to our terms. All services are performed with professional care. Warranty applies as per policy.</p></div></div>
+    <div class="modal-overlay" id="modal-cookie"><div class="modal-box"><button class="modal-close" onclick="closeModal('cookie')">&times;</button><h2>Cookie Policy</h2><p>We use cookies to enhance your 3D experience, analyze traffic, and personalize content.</p></div></div>
+    <div class="modal-overlay" id="modal-disclaimer"><div class="modal-box"><button class="modal-close" onclick="closeModal('disclaimer')">&times;</button><h2>Disclaimer</h2><p>Information is provided "as is". RANA SOLAR REPAIRING LAB is not liable for any damages or losses.</p></div></div>
 
     <!-- ============================================================
     SCRIPTS — THREE.JS + INTERACTIONS
@@ -1362,8 +1039,17 @@
         // ============================================================
         //  NAVIGATION + PORTAL TRANSITION
         // ============================================================
-        const sections = { home: 'section-home', services: 'section-services', products: 'section-products',
-            team: 'section-team', contact: 'section-contact' };
+        const sections = {
+            home: 'section-home',
+            about: 'section-about',
+            services: 'section-services',
+            products: 'section-products',
+            testimonials: 'section-testimonials',
+            blog: 'section-blog',
+            faq: 'section-faq',
+            team: 'section-team',
+            contact: 'section-contact'
+        };
 
         function navigateTo(section) {
             document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
@@ -1389,6 +1075,20 @@
         });
 
         // ============================================================
+        //  FAQ TOGGLE
+        // ============================================================
+        function toggleFaq(btn) {
+            const answer = btn.nextElementSibling;
+            const isOpen = answer.classList.contains('open');
+            document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+            document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
+            if (!isOpen) {
+                answer.classList.add('open');
+                btn.classList.add('active');
+            }
+        }
+
+        // ============================================================
         //  CONTACT FORM
         // ============================================================
         function handleContact(e) {
@@ -1402,7 +1102,7 @@
         // ============================================================
         function subscribeNewsletter() {
             const input = document.getElementById('newsletterEmail');
-            if (input.value && input.value.includes('@')) { alert('✅ Subscribed to Quantum Updates!');
+            if (input.value && input.value.includes('@')) { alert('✅ Subscribed successfully!');
                 input.value = ''; } else { alert('Please enter a valid email.'); }
         }
 
@@ -1505,14 +1205,12 @@
             box.position.set(0, 0, 0);
             panelGroup.add(box);
 
-            // Grid lines on panel
             const gridHelper = new THREE.GridHelper(1.4, 6, 0xfbbf24, 0xfbbf24);
             gridHelper.position.y = 0.05;
             gridHelper.material.transparent = true;
             gridHelper.material.opacity = 0.15;
             panelGroup.add(gridHelper);
 
-            // Small glowing dots
             for (let i = 0; i < 12; i++) {
                 const dot = new THREE.Mesh(
                     new THREE.SphereGeometry(0.03, 6, 6),
@@ -1567,35 +1265,29 @@
                 requestAnimationFrame(animate);
                 time += 0.006;
 
-                // Rotate rings
                 ring.rotation.y += 0.005;
                 ring2.rotation.y -= 0.008;
                 glowRing.rotation.y += 0.003;
 
-                // Pulse
                 const pulse = 1 + Math.sin(time * 1.8) * 0.02;
                 ring.scale.set(pulse, pulse, pulse);
                 ring2.scale.set(1 + Math.sin(time * 1.8 + 0.5) * 0.015, 1 + Math.sin(time * 1.8 + 0.5) * 0.015, 1 + Math.sin(
                     time * 1.8 + 0.5) * 0.015);
 
-                // Panel floating
                 panelGroup.position.y = -0.5 + Math.sin(time * 0.8) * 0.15;
                 panelGroup.rotation.x = Math.sin(time * 0.5) * 0.05;
                 panelGroup.rotation.z = Math.cos(time * 0.6) * 0.05;
                 panelGroup.rotation.y += 0.004;
 
-                // Particles slow rotation
                 particles.rotation.y += 0.0003;
                 particles.rotation.x += 0.0001;
 
-                // Mouse parallax on rings
                 ring.rotation.x = Math.PI / 2.4 + mouseY * 0.08;
                 ring.rotation.z = 0.2 + mouseX * 0.08;
                 ring2.rotation.x = Math.PI / 2.4 + 0.1 + mouseY * 0.06;
                 ring2.rotation.z = -0.15 + mouseX * 0.06;
                 glowRing.rotation.x = Math.PI / 2.4 - 0.05 + mouseY * 0.04;
 
-                // Camera slight movement
                 camera.position.x = mouseX * 0.3;
                 camera.position.y = 2 + mouseY * 0.2;
                 camera.lookAt(0, 0, 0);
@@ -1604,7 +1296,6 @@
             }
             animate();
 
-            // ---- Resize ----
             window.addEventListener('resize', () => {
                 camera.aspect = window.innerWidth / window.innerHeight;
                 camera.updateProjectionMatrix();
@@ -1612,7 +1303,7 @@
             });
         })();
 
-        console.log('⚡ RANA SOLAR 3D PORTAL — Next‑gen experience');
+        console.log('⚡ RANA SOLAR REPAIRING LAB — 3D Portal');
         console.log('🔒 Protected by NEXUS SOLUTION');
     </script>
 </body>
